@@ -1,0 +1,10 @@
+{
+	"language": {
+		"select": "Seleccionar Idioma"
+	},
+	"nav": {
+		"home": "Inicio",
+		"lessons": "Lecciones",
+		"profile": "Perfil"
+	}
+}
