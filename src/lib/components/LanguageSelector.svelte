@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { _, locale } from 'svelte-i18n';
 	import { onMount } from 'svelte';
-
+	import { Languages } from '@lucide/svelte';
 	let currentLang = 'en'; // default
 
 	const languages: Record<string, string> = {
@@ -25,9 +25,15 @@
 	});
 </script>
 
-<div class="language-switcher">
-	<label>🌐 {$_('language.select')}</label>
-	<select bind:value={currentLang} on:change={() => changeLanguage(currentLang)}>
+<div class="flex">
+	<!-- <label>🌐 {$_('language.select')}</label> -->
+
+	<Languages />
+	<select
+		class="ml-1 cursor-pointer"
+		bind:value={currentLang}
+		on:change={() => changeLanguage(currentLang)}
+	>
 		{#each Object.keys(languages) as lang (lang)}
 			<option value={lang}>
 				{languages[lang]}
@@ -37,10 +43,4 @@
 </div>
 
 <style>
-	.language-switcher {
-		padding: 0.5rem;
-		background: #f0f0f0;
-		border-radius: 8px;
-		display: inline-block;
-	}
 </style>
