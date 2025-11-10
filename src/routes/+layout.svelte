@@ -1,5 +1,5 @@
-<!-- src/routes/+layout.svelte -->
 <script lang="ts">
+	import '../app.css';
 	import '$lib/i18n.ts'; // Initialize i18n
 	import LanguageSelector from '$lib/components/LanguageSelector.svelte';
 	let { children } = $props();
