@@ -1,0 +1,6 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+@import '@skeletonlabs/skeleton'; /* [!code ++] */
+@import '@skeletonlabs/skeleton-svelte'; /* [!code ++] */
+@import '@skeletonlabs/skeleton/themes/cerberus'; /* [!code ++] */
