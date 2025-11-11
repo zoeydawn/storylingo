@@ -1,12 +1,13 @@
 <script lang="ts">
-	import { _, locale } from 'svelte-i18n';
+	import { locale } from 'svelte-i18n';
 	import { onMount } from 'svelte';
 	import { Languages } from '@lucide/svelte';
 	let currentLang = 'en'; // default
 
 	const languages: Record<string, string> = {
 		en: 'English',
-		es: 'Español'
+		es: 'Español',
+		fr: 'Français'
 	};
 
 	function changeLanguage(lang: string): void {

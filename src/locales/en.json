@@ -1,6 +1,14 @@
 {
 	"language": {
-		"select": "Select Language"
+		"select": "What Language are you learning?",
+		"en": "English",
+		"es": "Spanish",
+		"fr": "French",
+		"de": "German",
+		"it": "Italian",
+		"pt": "Portuguese",
+		"ru": "Russian",
+		"zh": "Chinese"
 	},
 	"nav": {
 		"home": "Home",

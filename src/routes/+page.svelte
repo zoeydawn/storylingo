@@ -2,14 +2,15 @@
 	import { fade } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
 
+	import { _ } from 'svelte-i18n';
 	// Define the 6 most commonly studied languages
 	const languages = [
-		{ id: 'english', name: 'English' },
-		{ id: 'spanish', name: 'Spanish' },
-		{ id: 'french', name: 'French' },
-		{ id: 'german', name: 'German' },
-		{ id: 'italian', name: 'Italian' },
-		{ id: 'chinese', name: 'Chinese' }
+		{ id: 'en', name: 'English' },
+		{ id: 'es', name: 'Spanish' },
+		{ id: 'fr', name: 'French' },
+		{ id: 'de', name: 'German' },
+		{ id: 'it', name: 'Italian' },
+		{ id: 'zh', name: 'Chinese' }
 	];
 
 	// Define CEFR levels
@@ -62,7 +63,7 @@
 			in:fade={{ duration: 300, easing: quintOut }}
 			out:fade={{ duration: 300, easing: quintOut }}
 		>
-			<h1 class="mb-6 text-center text-2xl font-bold">What Language are you learning?</h1>
+			<h1 class="mb-6 text-center text-2xl font-bold">{$_('language.select')}</h1>
 
 			<div class="grid grid-cols-2 gap-4">
 				{#each languages as language (language.id)}
@@ -71,7 +72,7 @@
 						class="btn flex h-20 items-center justify-center preset-filled text-lg"
 						on:click={() => selectLanguage(language.id)}
 					>
-						{language.name}
+						{$_(`language.${language.id}`)}
 					</button>
 				{/each}
 			</div>

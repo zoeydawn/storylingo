@@ -1,0 +1,18 @@
+{
+	"language": {
+		"select": "Quelle langue apprenez-vous ?",
+		"en": "Anglais",
+		"es": "Espagnol",
+		"fr": "Français",
+		"de": "Allemand",
+		"it": "Italien",
+		"pt": "Portugais",
+		"ru": "Russe",
+		"zh": "Chinois"
+	},
+	"nav": {
+		"home": "Accueil",
+		"lessons": "Leçons",
+		"profile": "Profil"
+	}
+}
