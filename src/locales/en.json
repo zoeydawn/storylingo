@@ -23,5 +23,10 @@
 		"home": "Home",
 		"lessons": "Lessons",
 		"profile": "Profile"
+	},
+	"login": {
+		"header": "Login",
+		"google": "Login with Google",
+		"guest": "Continue as Guest"
 	}
 }

@@ -4,6 +4,7 @@
 
 	import { _ } from 'svelte-i18n';
 	import Login from '$lib/components/Login.svelte';
+
 	// Define the 6 most commonly studied languages
 	const languages = [
 		{ id: 'en', name: 'English' },
