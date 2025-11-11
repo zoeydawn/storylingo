@@ -3,6 +3,7 @@
 	import { quintOut } from 'svelte/easing';
 
 	import { _ } from 'svelte-i18n';
+	import Login from '$lib/components/Login.svelte';
 	// Define the 6 most commonly studied languages
 	const languages = [
 		{ id: 'en', name: 'English' },
@@ -24,9 +25,19 @@
 	];
 
 	// State management
-	let currentStep: 'language' | 'level' | 'none' = 'language';
+	let currentStep: 'language' | 'level' | 'none' | 'login' = 'language';
 	let selectedLanguage: string | null = null;
 	let selectedLevel: string | null = null;
+
+	// handleGoogleLogin
+	function handleGoogleLogin() {
+		console.log('Google login clicked');
+	}
+
+	// handleGuestLogin
+	function handleGuestLogin() {
+		console.log('Guest login clicked');
+	}
 
 	// Handle language selection
 	function selectLanguage(languageId: string) {
@@ -43,6 +54,12 @@
 		selectedLevel = levelId;
 		// Here you would typically navigate to the next page or perform an action
 		console.log('Selected language:', selectedLanguage, 'Level:', selectedLevel);
+
+		currentStep = 'none';
+
+		setTimeout(() => {
+			currentStep = 'login';
+		}, 300);
 	}
 
 	// Reset to language selection
@@ -104,6 +121,13 @@
 					</button>
 				{/each}
 			</div>
+		</div>
+	{:else if currentStep === 'login'}
+		<div
+			in:fade={{ duration: 300, easing: quintOut }}
+			out:fade={{ duration: 300, easing: quintOut }}
+		>
+			<Login {handleGoogleLogin} {handleGuestLogin} />
 		</div>
 	{/if}
 </div>
