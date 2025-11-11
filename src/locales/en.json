@@ -27,6 +27,7 @@
 	"login": {
 		"header": "Login",
 		"google": "Login with Google",
+		"email": "Login with Email",
 		"guest": "Continue as Guest"
 	}
 }

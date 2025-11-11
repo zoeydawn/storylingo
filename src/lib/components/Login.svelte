@@ -35,6 +35,12 @@
 	</button>
 
 	<button type="button" class="btn w-full preset-filled" on:click={handleGuestLogin}>
+		{$_('login.email')}
+	</button>
+
+	<hr class="hr border-surface-950-50" />
+
+	<button type="button" class="btn w-full preset-outlined" on:click={handleGuestLogin}>
 		{$_('login.guest')}
 	</button>
 </div>
