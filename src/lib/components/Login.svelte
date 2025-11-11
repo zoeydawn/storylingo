@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { _ } from 'svelte-i18n';
+	import { Mail } from '@lucide/svelte';
 
 	export let handleGoogleLogin: () => void;
 	export let handleGuestLogin: () => void;
@@ -35,6 +36,7 @@
 	</button>
 
 	<button type="button" class="btn w-full preset-filled" on:click={handleGuestLogin}>
+		<Mail class="mr-2" />
 		{$_('login.email')}
 	</button>
 
