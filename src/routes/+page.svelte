@@ -15,12 +15,12 @@
 
 	// Define CEFR levels
 	const levels = [
-		{ id: 'a1', name: 'A1 - Beginner' },
-		{ id: 'a2', name: 'A2 - Elementary' },
-		{ id: 'b1', name: 'B1 - Intermediate' },
-		{ id: 'b2', name: 'B2 - Upper Intermediate' },
-		{ id: 'c1', name: 'C1 - Advanced' },
-		{ id: 'c2', name: 'C2 - Proficiency' }
+		{ id: 'a1', name: $_('level.a1:') },
+		{ id: 'a2', name: $_('level.a2:') },
+		{ id: 'b1', name: $_('level.b1:') },
+		{ id: 'b2', name: $_('level.b2:') },
+		{ id: 'c1', name: $_('level.c1:') },
+		{ id: 'c2', name: $_('level.c2:') }
 	];
 
 	// State management
@@ -86,7 +86,9 @@
 				<button type="button" class="btn preset-outlined" on:click={resetSelection}>
 					← Back
 				</button>
-				<h1 class="flex-1 text-center text-2xl font-bold">What is your level?</h1>
+				<h1 class="flex-1 text-center text-2xl font-bold">
+					{$_('level.header')}
+				</h1>
 				<div class="w-16"></div>
 				<!-- Spacer for alignment -->
 			</div>

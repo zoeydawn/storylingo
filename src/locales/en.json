@@ -10,6 +10,15 @@
 		"ru": "Russian",
 		"zh": "Chinese"
 	},
+	"level": {
+		"header": "What is your level?",
+		"a1:": "A1 - Beginner",
+		"a2:": "A2 - Elementary",
+		"b1:": "B1 - Intermediate",
+		"b2:": "B2 - Intermediate",
+		"c1:": "C1 - Advanced",
+		"c2:": "C2 - Proficient"
+	},
 	"nav": {
 		"home": "Home",
 		"lessons": "Lessons",
