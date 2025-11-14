@@ -6,6 +6,8 @@
 	import Login from '$lib/components/Login.svelte';
 	import { displaySettings, setTargetLevel, setTargetLanguage } from '../stores/languageSettings';
 	import { languages, levels, type Language, type LanguageLevel } from '$lib';
+	import { goto } from '$app/navigation';
+	import { resolve } from '$app/paths';
 
 	type Step = 'language' | 'level' | 'none' | 'login';
 	// State management
@@ -19,6 +21,8 @@
 	// handleGuestLogin
 	function handleGuestLogin() {
 		console.log('Guest login clicked');
+
+		goto(resolve('/story'));
 	}
 
 	// Handle language selection
