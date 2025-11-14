@@ -29,5 +29,8 @@
 		"google": "Login with Google",
 		"email": "Login with Email",
 		"guest": "Continue as Guest"
+	},
+	"navigation": {
+		"generateStory": "Generate Micro-Story"
 	}
 }
