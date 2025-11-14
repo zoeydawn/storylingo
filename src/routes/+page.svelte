@@ -7,8 +7,9 @@
 	import { displaySettings, setTargetLevel, setTargetLanguage } from '../stores/languageSettings';
 	import { languages, levels, type Language, type LanguageLevel } from '$lib';
 
+	type Step = 'language' | 'level' | 'none' | 'login';
 	// State management
-	let currentStep: 'language' | 'level' | 'none' | 'login' = 'language';
+	let currentStep: Step = 'language';
 
 	// handleGoogleLogin
 	function handleGoogleLogin() {
@@ -44,11 +45,11 @@
 	}
 
 	// Reset to language selection
-	function resetSelection() {
+	function resetSelection(step: Step) {
 		currentStep = 'none';
 
 		setTimeout(() => {
-			currentStep = 'language';
+			currentStep = step;
 			setTargetLanguage('');
 			setTargetLevel('');
 		}, 300);
@@ -81,7 +82,11 @@
 			out:fade={{ duration: 300, easing: quintOut }}
 		>
 			<div class="mb-6 flex items-center justify-between">
-				<button type="button" class="btn preset-outlined" on:click={resetSelection}>
+				<button
+					type="button"
+					class="btn preset-outlined"
+					on:click={() => resetSelection('language')}
+				>
 					← Back
 				</button>
 				<h1 class="flex-1 text-center text-2xl font-bold">
@@ -108,6 +113,9 @@
 			in:fade={{ duration: 300, easing: quintOut }}
 			out:fade={{ duration: 300, easing: quintOut }}
 		>
+			<button type="button" class="btn preset-outlined" on:click={() => resetSelection('level')}>
+				← Back
+			</button>
 			<Login {handleGoogleLogin} {handleGuestLogin} />
 		</div>
 	{/if}
