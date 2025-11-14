@@ -4,31 +4,11 @@
 
 	import { _ } from 'svelte-i18n';
 	import Login from '$lib/components/Login.svelte';
-
-	// Define the 6 most commonly studied languages
-	const languages = [
-		{ id: 'en', name: 'English' },
-		{ id: 'es', name: 'Spanish' },
-		{ id: 'fr', name: 'French' },
-		{ id: 'de', name: 'German' },
-		{ id: 'it', name: 'Italian' },
-		{ id: 'zh', name: 'Chinese' }
-	];
-
-	// Define CEFR levels
-	const levels = [
-		{ id: 'a1', name: $_('level.a1:') },
-		{ id: 'a2', name: $_('level.a2:') },
-		{ id: 'b1', name: $_('level.b1:') },
-		{ id: 'b2', name: $_('level.b2:') },
-		{ id: 'c1', name: $_('level.c1:') },
-		{ id: 'c2', name: $_('level.c2:') }
-	];
+	import { displaySettings, setTargetLevel, setTargetLanguage } from '../stores/languageSettings';
+	import { languages, levels, type Language, type LanguageLevel } from '$lib';
 
 	// State management
 	let currentStep: 'language' | 'level' | 'none' | 'login' = 'language';
-	let selectedLanguage: string | null = null;
-	let selectedLevel: string | null = null;
 
 	// handleGoogleLogin
 	function handleGoogleLogin() {
@@ -41,8 +21,8 @@
 	}
 
 	// Handle language selection
-	function selectLanguage(languageId: string) {
-		selectedLanguage = languageId;
+	function selectLanguage(languageId: Language) {
+		setTargetLanguage(languageId);
 		currentStep = 'none';
 		// Transition to level selection after a short delay for visual feedback
 		setTimeout(() => {
@@ -51,10 +31,10 @@
 	}
 
 	// Handle level selection
-	function selectLevel(levelId: string) {
-		selectedLevel = levelId;
-		// Here you would typically navigate to the next page or perform an action
-		console.log('Selected language:', selectedLanguage, 'Level:', selectedLevel);
+	function selectLevel(levelId: LanguageLevel) {
+		setTargetLevel(levelId);
+
+		console.log('Selected language:', $displaySettings.language, 'Level:', $displaySettings.level);
 
 		currentStep = 'none';
 
@@ -69,8 +49,8 @@
 
 		setTimeout(() => {
 			currentStep = 'language';
-			selectedLanguage = null;
-			selectedLevel = null;
+			setTargetLanguage('');
+			setTargetLevel('');
 		}, 300);
 	}
 </script>
@@ -84,13 +64,13 @@
 			<h1 class="mb-6 text-center text-2xl font-bold">{$_('language.select')}</h1>
 
 			<div class="grid grid-cols-2 gap-4">
-				{#each languages as language (language.id)}
+				{#each languages as language (language)}
 					<button
 						type="button"
 						class="btn flex h-20 items-center justify-center preset-filled text-lg"
-						on:click={() => selectLanguage(language.id)}
+						on:click={() => selectLanguage(language)}
 					>
-						{$_(`language.${language.id}`)}
+						{$_(`language.${language}`)}
 					</button>
 				{/each}
 			</div>
@@ -112,13 +92,13 @@
 			</div>
 
 			<div class="grid grid-cols-2 gap-4">
-				{#each levels as level (level.id)}
+				{#each levels as level (level)}
 					<button
 						type="button"
 						class="btn flex h-20 items-center justify-center preset-filled text-lg"
-						on:click={() => selectLevel(level.id)}
+						on:click={() => selectLevel(level)}
 					>
-						{level.name}
+						{$_(`level.label${level}`)}
 					</button>
 				{/each}
 			</div>
