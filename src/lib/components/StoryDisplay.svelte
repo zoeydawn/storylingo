@@ -1,17 +1,16 @@
 <script lang="ts">
 	import { copyToClipboard } from '$lib/utils';
 	import { Save, RefreshCw, Copy } from '@lucide/svelte';
-	import { displaySettings } from '../../stores/languageSettings';
 
 	export let storyContent: string;
+	export let storyTitle: string;
 </script>
 
 <div class="w-full card preset-filled-surface-100-900 p-4">
 	<header class="mb-4">
 		<div class="flex items-start justify-between">
 			<h2 class="text-xl font-semibold">
-				Your {$displaySettings.language} Story
-				<span class="text-sm opacity-75">({$displaySettings.level})</span>
+				{storyTitle}
 			</h2>
 			<button
 				class="btn-icon text-surface-700 hover:text-surface-900"

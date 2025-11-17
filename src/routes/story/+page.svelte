@@ -1,9 +1,10 @@
 <script lang="ts">
 	import StoryDisplay from '$lib/components/StoryDisplay.svelte';
-	import { displaySettings } from '../../stores/languageSettings';
+	import { displaySettings, languageSettings } from '../../stores/languageSettings';
 
 	let storyTopic = '';
 	let storyContent = '';
+	let storyTitle = '';
 	let isLoading = false;
 	let error: string | null = null;
 
@@ -23,20 +24,21 @@
 				},
 				body: JSON.stringify({
 					topic: storyTopic,
-					language: $displaySettings.language,
-					level: $displaySettings.level
+					language: $languageSettings.targetLanguage,
+					level: $languageSettings.targetLevel
 				})
 			});
+
+			console.log('response', response);
 
 			if (!response.ok) {
 				throw new Error(`Server responded with ${response.status}`);
 			}
 
 			const data = await response.json();
-			storyContent = data.storyContent;
-
-			// Save to user history (you'll implement this later)
-			// saveToHistory(storyContent);
+			console.log('data', data);
+			storyTitle = data.title;
+			storyContent = data.body;
 		} catch (err) {
 			console.error('Story generation failed:', err);
 			error = 'Failed to generate story. Please try again.';
@@ -91,7 +93,7 @@
 
 	<div class="mt-8">
 		{#if storyContent}
-			<StoryDisplay {storyContent} />
+			<StoryDisplay {storyContent} {storyTitle} />
 		{:else if isLoading}
 			<div class="space-y-4">
 				<div class="h-6 w-1/2 animate-pulse rounded bg-gray-200"></div>
