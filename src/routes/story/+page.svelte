@@ -1,9 +1,6 @@
 <script lang="ts">
 	import StoryDisplay from '$lib/components/StoryDisplay.svelte';
-
-	// Hardcoded values
-	const targetLanguage = 'Spanish';
-	const languageLevel = 'Intermediate';
+	import { displaySettings } from '../../stores/languageSettings';
 
 	let storyTopic = '';
 	let storyContent = '';
@@ -27,7 +24,7 @@
 			} else if (storyTopic.toLowerCase().includes('park')) {
 				storyContent = 'En el parque, los niños jugaban al fútbol. Un perro perseguía la pelota.';
 			} else {
-				storyContent = `Esta es una historia sobre ${storyTopic} en ${targetLanguage} para nivel ${languageLevel}.`;
+				storyContent = `Esta es una historia sobre ${storyTopic} en ${$displaySettings.language} para nivel ${$displaySettings.level}.`;
 			}
 		} catch (err) {
 			error = 'Failed to generate story. Please try again.';
@@ -43,7 +40,7 @@
 
 	<div class="mb-6 rounded-lg bg-primary-800/20 p-4">
 		<p class="font-semibold">Current settings:</p>
-		<p>Language: {targetLanguage} | Level: {languageLevel}</p>
+		<p>Language: {$displaySettings.language} | Level: {$displaySettings.level}</p>
 	</div>
 
 	<form class="w-full space-y-4" on:submit={generateStory}>
@@ -82,7 +79,7 @@
 
 	<div class="mt-8">
 		{#if storyContent}
-			<StoryDisplay {storyContent} {targetLanguage} {languageLevel} />
+			<StoryDisplay {storyContent} />
 		{:else if isLoading}
 			<div class="space-y-4">
 				<!-- Skeleton loading indicator -->
