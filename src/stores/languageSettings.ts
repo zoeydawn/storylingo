@@ -8,8 +8,8 @@ export interface LanguageSettings {
 
 // Initialize store with defaults
 export const languageSettings = writable<LanguageSettings>({
-	targetLanguage: '',
-	targetLevel: ''
+	targetLanguage: 'fr',
+	targetLevel: 'a1'
 });
 
 // Derived store for formatted display

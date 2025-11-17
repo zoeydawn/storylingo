@@ -7,7 +7,8 @@
 	let isLoading = false;
 	let error: string | null = null;
 
-	async function generateStory() {
+	async function generateStory(event: Event) {
+		event.preventDefault();
 		if (!storyTopic.trim()) return;
 
 		isLoading = true;
@@ -15,20 +16,30 @@
 		storyContent = '';
 
 		try {
-			// Simulate API call delay
-			await new Promise((resolve) => setTimeout(resolve, 1500));
+			const response = await fetch('/story/generate', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify({
+					topic: storyTopic,
+					language: $displaySettings.language,
+					level: $displaySettings.level
+				})
+			});
 
-			// Simulated responses
-			if (storyTopic.toLowerCase().includes('cat')) {
-				storyContent = 'El gato saltó sobre la mesa. Buscaba su comida favorita.';
-			} else if (storyTopic.toLowerCase().includes('park')) {
-				storyContent = 'En el parque, los niños jugaban al fútbol. Un perro perseguía la pelota.';
-			} else {
-				storyContent = `Esta es una historia sobre ${storyTopic} en ${$displaySettings.language} para nivel ${$displaySettings.level}.`;
+			if (!response.ok) {
+				throw new Error(`Server responded with ${response.status}`);
 			}
+
+			const data = await response.json();
+			storyContent = data.storyContent;
+
+			// Save to user history (you'll implement this later)
+			// saveToHistory(storyContent);
 		} catch (err) {
+			console.error('Story generation failed:', err);
 			error = 'Failed to generate story. Please try again.';
-			console.error('Story generation error:', err);
 		} finally {
 			isLoading = false;
 		}
@@ -53,6 +64,7 @@
 					bind:value={storyTopic}
 					placeholder="Enter a topic (e.g., 'a cat in the park')"
 					disabled={isLoading}
+					required
 				/>
 			</label>
 			<p class="mt-1 text-sm text-surface-500">What should your story be about?</p>
@@ -82,7 +94,6 @@
 			<StoryDisplay {storyContent} />
 		{:else if isLoading}
 			<div class="space-y-4">
-				<!-- Skeleton loading indicator -->
 				<div class="h-6 w-1/2 animate-pulse rounded bg-gray-200"></div>
 				<div class="h-4 w-full animate-pulse rounded bg-gray-200"></div>
 				<div class="h-4 w-5/6 animate-pulse rounded bg-gray-200"></div>
