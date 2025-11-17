@@ -1,5 +1,6 @@
 <script lang="ts">
 	import StoryDisplay from '$lib/components/StoryDisplay.svelte';
+	import TargetDropdown from '$lib/components/TargetDropdown.svelte';
 	import { displaySettings, languageSettings } from '../../stores/languageSettings';
 
 	let storyTopic = '';
@@ -29,14 +30,12 @@
 				})
 			});
 
-			console.log('response', response);
-
 			if (!response.ok) {
 				throw new Error(`Server responded with ${response.status}`);
 			}
 
 			const data = await response.json();
-			console.log('data', data);
+
 			storyTitle = data.title;
 			storyContent = data.body;
 		} catch (err) {
@@ -51,10 +50,7 @@
 <div class="mx-auto max-w-3xl p-4">
 	<h1 class="mb-6 text-3xl font-bold">Create a Micro-Story</h1>
 
-	<div class="mb-6 rounded-lg bg-primary-800/20 p-4">
-		<p class="font-semibold">Current settings:</p>
-		<p>Language: {$displaySettings.language} | Level: {$displaySettings.level}</p>
-	</div>
+	<TargetDropdown />
 
 	<form class="w-full space-y-4" on:submit={generateStory}>
 		<fieldset class="space-y-2">
