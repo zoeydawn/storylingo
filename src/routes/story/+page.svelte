@@ -110,28 +110,29 @@
 		<button
 			type="button"
 			class="preset-outlined-secondary btn w-full justify-center sm:w-auto"
-			on:click={() => storyTopic = storyTopics[Math.floor(Math.random() * storyTopics.length)]}
+			on:click={() => (storyTopic = storyTopics[Math.floor(Math.random() * storyTopics.length)])}
 			disabled={isLoading}
 		>
 			Refresh Topic
 		</button>
 
-	{#if error}
-		<div class="mt-6 rounded-lg border border-red-300 bg-red-100 p-4 text-red-800">
-			{error}
-		</div>
-	{/if}
-
-	<div class="mt-8">
-		{#if storyContent}
-			<StoryDisplay {storyContent} {storyTitle} />
-		{:else if isLoading}
-			<div class="space-y-4">
-				<div class="h-6 w-1/2 animate-pulse rounded bg-gray-200"></div>
-				<div class="h-4 w-full animate-pulse rounded bg-gray-200"></div>
-				<div class="h-4 w-5/6 animate-pulse rounded bg-gray-200"></div>
-				<div class="h-4 w-3/4 animate-pulse rounded bg-gray-200"></div>
+		{#if error}
+			<div class="mt-6 rounded-lg border border-red-300 bg-red-100 p-4 text-red-800">
+				{error}
 			</div>
 		{/if}
-	</div>
+
+		<div class="mt-8">
+			{#if storyContent}
+				<StoryDisplay {storyContent} {storyTitle} />
+			{:else if isLoading}
+				<div class="space-y-4">
+					<div class="h-6 w-1/2 animate-pulse rounded bg-gray-200"></div>
+					<div class="h-4 w-full animate-pulse rounded bg-gray-200"></div>
+					<div class="h-4 w-5/6 animate-pulse rounded bg-gray-200"></div>
+					<div class="h-4 w-3/4 animate-pulse rounded bg-gray-200"></div>
+				</div>
+			{/if}
+		</div>
+	</form>
 </div>
