@@ -4,7 +4,6 @@
 
 	export let storyContent: string;
 	export let storyTitle: string;
-	console.log('storyContent', storyContent);
 </script>
 
 <div class="w-full card preset-filled-surface-100-900 p-4">
@@ -25,7 +24,7 @@
 		<div class="mt-2 h-1 w-12 rounded bg-primary-500"></div>
 	</header>
 	<article class="space-y-4 p-4">
-		{#each storyContent.split('\n') as paragraph}
+		{#each storyContent.split('\n') as paragraph, index (index)}
 			<p>{paragraph}</p>
 		{/each}
 	</article>
