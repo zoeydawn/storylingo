@@ -81,7 +81,7 @@
 	}
 </script>
 
-<div class="m-auto mx-auto flex max-w-md flex-col p-4">
+<div class="m-auto mx-auto flex max-w-md flex-col p-4 items-center">
 	<h3 class="mb-6 text-2xl font-bold">Create a Micro-Story</h3>
 	<TargetDropdown />
 
