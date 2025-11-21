@@ -3,7 +3,7 @@
 	import TargetDropdown from '$lib/components/TargetDropdown.svelte';
 	import { displaySettings, languageSettings } from '../../stores/languageSettings';
 
-	let storyTopic = '';
+	let storyTopic = ''; // TODO: populate with a random topic
 	let storyContent = '';
 	let storyTitle = '';
 	let isLoading = false;
