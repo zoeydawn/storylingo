@@ -1,7 +1,10 @@
 <script lang="ts">
+	import { languagesByCode, type LanguageString } from '$lib';
 	import StoryDisplay from '$lib/components/StoryDisplay.svelte';
 	import TargetDropdown from '$lib/components/TargetDropdown.svelte';
-	import { displaySettings, languageSettings } from '../../stores/languageSettings';
+	import { languageSettings } from '../../stores/languageSettings';
+
+	// TODO: integrate i18n in this page
 
 	const storyTopics = [
 		'A day in the life of a butterfly',
@@ -46,6 +49,8 @@
 		storyContent = '';
 
 		try {
+			const language: LanguageString = languagesByCode[$languageSettings.targetLanguage];
+
 			const response = await fetch('/story/generate', {
 				method: 'POST',
 				headers: {
@@ -53,7 +58,7 @@
 				},
 				body: JSON.stringify({
 					topic: storyTopic,
-					language: $languageSettings.targetLanguage,
+					language,
 					level: $languageSettings.targetLevel
 				})
 			});

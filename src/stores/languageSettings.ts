@@ -2,7 +2,7 @@ import type { Language, LanguageLevel } from '$lib';
 import { writable, derived } from 'svelte/store';
 
 export interface LanguageSettings {
-	targetLanguage: Language | '';
+	targetLanguage: Language;
 	targetLevel: LanguageLevel | '';
 }
 

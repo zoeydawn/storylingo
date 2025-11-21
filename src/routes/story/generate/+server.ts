@@ -2,12 +2,15 @@ import { OPENAI_API_KEY } from '$env/static/private';
 import { OpenAI } from 'openai';
 import { json, error } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
-import type { Language, LanguageLevel } from '$lib';
+import type { LanguageLevel, LanguageString } from '$lib';
 
 export const POST: RequestHandler = async ({ request }) => {
 	try {
-		const { topic, language, level }: { topic: string; language: Language; level: LanguageLevel } =
-			await request.json();
+		const {
+			topic,
+			language,
+			level
+		}: { topic: string; language: LanguageString; level: LanguageLevel } = await request.json();
 
 		if (!topic || !language || !level) {
 			throw error(400, 'Missing required parameters');
@@ -62,8 +65,8 @@ Format the response as JSON with these exact keys: title and body.`;
 		const storyContent = JSON.parse(content);
 
 		// Log token usage for cost monitoring
-		console.log('Token usage:', response.usage);
-		console.log({ prompt, level });
+		// console.log('Token usage:', response.usage);
+		// console.log({ prompt, level });
 		return json({ ...storyContent });
 	} catch (err) {
 		console.error('OpenAI API error:', err);
