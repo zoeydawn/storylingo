@@ -4,6 +4,7 @@
 
 	export let storyContent: string;
 	export let storyTitle: string;
+	console.log('storyContent', storyContent);
 </script>
 
 <div class="w-full card preset-filled-surface-100-900 p-4">
