@@ -25,7 +25,9 @@
 		<div class="mt-2 h-1 w-12 rounded bg-primary-500"></div>
 	</header>
 	<article class="space-y-4 p-4">
-		{storyContent}
+		{#each storyContent.split('\n') as paragraph}
+			<p>{paragraph}</p>
+		{/each}
 	</article>
 
 	<footer class="flex items-center justify-between gap-4 p-4">
