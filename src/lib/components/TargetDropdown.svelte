@@ -20,7 +20,7 @@
 
 <div class="mb-3.5 flex">
 	<select
-		class="cursor-pointer"
+		class="select w-36 cursor-pointer"
 		value={$languageSettings.targetLanguage}
 		on:change={handleLanguageChange}
 	>
@@ -32,7 +32,7 @@
 	</select>
 
 	<select
-		class="ml-4 cursor-pointer"
+		class="select ml-4 w-36 cursor-pointer"
 		value={$languageSettings.targetLevel}
 		on:change={handleLevelChange}
 	>
