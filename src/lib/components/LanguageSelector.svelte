@@ -31,7 +31,7 @@
 
 	<Languages />
 	<select
-		class="ml-1 cursor-pointer"
+		class="select ml-1 cursor-pointer"
 		bind:value={currentLang}
 		on:change={() => changeLanguage(currentLang)}
 	>
