@@ -65,7 +65,7 @@ Format the response as JSON with these exact keys: title and body.`;
 		const storyContent = JSON.parse(content);
 
 		// Ensure paragraphs are separated by new lines
-		storyContent.body = storyContent.body.replace(/\\n/g, '\n\n');
+		storyContent.body = storyContent.body.replace(/\\n/g, '\n\n').replace(/\\t/g, '\n\n');
 		console.log('Token usage:', response.usage);
 
 		console.log(storyContent);
