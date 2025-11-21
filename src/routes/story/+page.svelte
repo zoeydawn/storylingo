@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { RefreshCw } from '@lucide/svelte';
 	import { languagesByCode, type LanguageString } from '$lib';
 	import StoryDisplay from '$lib/components/StoryDisplay.svelte';
 	import TargetDropdown from '$lib/components/TargetDropdown.svelte';
@@ -81,12 +82,11 @@
 </script>
 
 <div class="mx-auto max-w-3xl p-4">
-	<h1 class="mb-6 text-3xl font-bold">Create a Micro-Story</h1>
-
+	<h3 class="mb-6 text-2xl font-bold">Create a Micro-Story</h3>
 	<TargetDropdown />
 
-	<form class="w-full space-y-4" on:submit={generateStory}>
-		<fieldset class="space-y-2">
+	<form class="w-full space-y-4 pt-1.5 pb-6" on:submit={generateStory}>
+		<fieldset class="align-center flex space-y-2">
 			<label class="label">
 				<span class="label-text">Story Topic</span>
 				<input
@@ -98,12 +98,19 @@
 					required
 				/>
 			</label>
-			<p class="mt-1 text-sm text-surface-500">What should your story be about?</p>
+			<button
+				type="button"
+				class="preset-outlined-secondary btn w-full justify-center sm:w-auto"
+				on:click={() => (storyTopic = storyTopics[Math.floor(Math.random() * storyTopics.length)])}
+				disabled={isLoading}
+			>
+				<RefreshCw class="" />
+			</button>
 		</fieldset>
 
 		<button
 			type="submit"
-			class="preset-filled-primary btn w-full justify-center sm:w-auto"
+			class="btn w-full justify-center preset-outlined-primary-500 sm:w-auto"
 			disabled={isLoading || !storyTopic.trim()}
 		>
 			{#if isLoading}
@@ -111,14 +118,6 @@
 			{:else}
 				Generate Story
 			{/if}
-		</button>
-		<button
-			type="button"
-			class="preset-outlined-secondary btn w-full justify-center sm:w-auto"
-			on:click={() => (storyTopic = storyTopics[Math.floor(Math.random() * storyTopics.length)])}
-			disabled={isLoading}
-		>
-			Refresh Topic
 		</button>
 
 		{#if error}
