@@ -34,7 +34,7 @@ export const POST: RequestHandler = async ({ request }) => {
 
 Please provide the following properties:
 1. **Title**: A short and descriptive title
-2. **Body**: The story content
+2. **Body**: The story content with paragraphs separated by new lines
 
 Format the response as JSON with these exact keys: title and body.`;
 
@@ -64,8 +64,7 @@ Format the response as JSON with these exact keys: title and body.`;
 		// Parse JSON response
 		const storyContent = JSON.parse(content);
 
-		// Ensure paragraphs are separated by new lines
-		storyContent.body = storyContent.body.replace(/\\n/g, '\n\n').replace(/\\t/g, '\n\n');
+		// Log token usage
 		console.log('Token usage:', response.usage);
 
 		console.log(storyContent);
