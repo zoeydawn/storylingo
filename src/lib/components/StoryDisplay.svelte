@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { copyToClipboard } from '$lib/utils';
-	import { Save, RefreshCw, Copy } from '@lucide/svelte';
+	import { Star, Copy } from '@lucide/svelte';
 
 	export let storyContent: string;
 	export let storyTitle: string;
@@ -13,7 +13,7 @@
 				{storyTitle}
 			</h2>
 			<button
-				class="btn-icon text-surface-700 hover:text-surface-900"
+				class="btn-icon text-surface-500 hover:text-surface-700"
 				on:click={() => copyToClipboard(storyContent)}
 				title="Copy to clipboard"
 				aria-label="Copy story to clipboard"
@@ -30,13 +30,9 @@
 	</article>
 
 	<footer class="flex items-center justify-between gap-4 p-4">
-		<button class="btn preset-outlined opacity-60">
-			<Save />
-			Save
-		</button>
-		<button class="btn preset-outlined opacity-60">
-			<RefreshCw />
-			Regenerate
+		<button class="preset btn opacity-60" on:click={(e) => e.preventDefault()}>
+			<Star />
+			<!-- <Star fill="currentColor" /> -->
 		</button>
 	</footer>
 </div>
