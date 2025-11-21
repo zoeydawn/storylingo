@@ -65,7 +65,9 @@ Format the response as JSON with these exact keys: title and body.`;
 		const storyContent = JSON.parse(content);
 
 		// Log token usage for cost monitoring
-		// console.log('Token usage:', response.usage);
+		console.log('Token usage:', response.usage);
+
+		console.log(storyContent);
 		// console.log({ prompt, level });
 		return json({ ...storyContent });
 	} catch (err) {
