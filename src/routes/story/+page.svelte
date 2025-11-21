@@ -81,7 +81,7 @@
 	}
 </script>
 
-<div class="mx-auto max-w-3xl p-4">
+<div class="m-auto mx-auto flex max-w-md flex-col p-4">
 	<h3 class="mb-6 text-2xl font-bold">Create a Micro-Story</h3>
 	<TargetDropdown />
 
@@ -110,7 +110,7 @@
 
 		<button
 			type="submit"
-			class="btn w-full justify-center preset-outlined-primary-500 sm:w-auto"
+			class="btn w-full justify-center preset-outlined-primary-500"
 			disabled={isLoading || !storyTopic.trim()}
 		>
 			{#if isLoading}
