@@ -100,7 +100,7 @@
 			</label>
 			<button
 				type="button"
-				class="preset-outlined-secondary btn w-full justify-center sm:w-auto"
+				class="preset-outlined-secondary btn justify-center"
 				on:click={() => (storyTopic = storyTopics[Math.floor(Math.random() * storyTopics.length)])}
 				disabled={isLoading}
 			>
