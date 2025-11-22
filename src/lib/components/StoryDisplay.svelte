@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { copyToClipboard } from '$lib/utils';
-	import { Star, Copy } from '@lucide/svelte';
+	import { Star, Copy, RefreshCcw } from '@lucide/svelte';
 
 	export let storyContent: string;
 	export let storyTitle: string;
@@ -33,6 +33,10 @@
 		<button class="preset btn opacity-60" on:click={(e) => e.preventDefault()}>
 			<Star />
 			<!-- <Star fill="currentColor" /> -->
+		</button>
+
+		<button class="preset btn opacity-60">
+			<RefreshCcw />
 		</button>
 	</footer>
 </div>
