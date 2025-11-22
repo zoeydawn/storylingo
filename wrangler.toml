@@ -1,0 +1,6 @@
+name = "storylingo"
+compatibility_date = "2025-11-22"
+
+main = ".svelte-kit/output/server/index.js"
+
+assets = { directory = "./public/", binding = "ASSETS" }
