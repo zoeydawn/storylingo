@@ -1,4 +1,4 @@
-import { OPENAI_API_KEY } from '$env/static/private';
+import { OPENAI_KEY } from '$env/static/private';
 import { OpenAI } from 'openai';
 import { json, error } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
@@ -16,7 +16,7 @@ export const POST: RequestHandler = async ({ request }) => {
 			throw error(400, 'Missing required parameters');
 		}
 
-		const openai = new OpenAI({ apiKey: OPENAI_API_KEY });
+		const openai = new OpenAI({ apiKey: OPENAI_KEY });
 
 		const levelInstructions = {
 			a1: 'Level A1, focus exclusively on the present moment. Keep sentences short and simple, built from the 500 most common words. Describe concrete objects and actions that can be seen or touched right now. Avoid connectors, tenses, or abstract ideas.',
