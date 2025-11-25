@@ -28,6 +28,7 @@
 		"header": "Login",
 		"google": "Login with Google",
 		"email": "Login with Email",
+		"emailSent": "Email Sent",
 		"guest": "Continue as Guest"
 	},
 	"navigation": {

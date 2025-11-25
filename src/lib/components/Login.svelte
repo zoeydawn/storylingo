@@ -59,13 +59,15 @@
 	{:else}
 		<form on:submit|preventDefault={handleEmailLogin} class="space-y-2">
 			<div class="space-y-2">
-				<label for="email" class="block text-sm font-medium">{$_('login.emailLabel')}</label>
+				<label for="email" class="block text-sm font-medium">{$_('login.email')}</label>
+
 				<input
 					id="email"
 					type="email"
 					bind:value={email}
 					required
-					class="input w-full rounded border-surface-300 bg-surface-50"
+					placeholder="email@example.com"
+					class="input"
 				/>
 			</div>
 			<button type="submit" class="btn w-full preset-filled">
