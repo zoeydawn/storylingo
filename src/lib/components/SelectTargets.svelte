@@ -7,12 +7,12 @@
 	import {
 		displaySettings,
 		setTargetLevel,
-		setTargetLanguage
-	} from '../../stores/languageSettings';
+		setTargetLanguage,
+		loginAsGuest
+	} from '$lib/stores';
 	import { languages, levels, type Language, type LanguageLevel } from '$lib';
 	// import { goto } from '$app/navigation';
 	// import { resolve } from '$app/paths';
-	import { loginAsGuest } from '../../stores/authStore';
 
 	type Step = 'language' | 'level' | 'none' | 'login';
 	// State management
