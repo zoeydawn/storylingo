@@ -3,7 +3,7 @@
 	import { languagesByCode, type LanguageString } from '$lib';
 	import StoryDisplay from '$lib/components/StoryDisplay.svelte';
 	import TargetDropdown from '$lib/components/TargetDropdown.svelte';
-	import { languageSettings } from '../../stores/languageSettings';
+	import { languageSettings } from '$lib/stores/languageSettings';
 
 	// TODO: integrate i18n in this page
 
@@ -81,7 +81,7 @@
 	}
 </script>
 
-<div class="m-auto mx-auto flex max-w-md flex-col p-4 items-center">
+<div class="m-auto mx-auto flex max-w-md flex-col items-center p-4">
 	<h3 class="mb-6 text-2xl font-bold">Create a Micro-Story</h3>
 	<TargetDropdown />
 
