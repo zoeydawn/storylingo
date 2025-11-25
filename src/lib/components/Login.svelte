@@ -1,16 +1,33 @@
 <script lang="ts">
 	import { _ } from 'svelte-i18n';
 	import { Mail } from '@lucide/svelte';
+	import { loginAsGuest, loginWithGoogle } from '$stores/authStore';
+	import { supabase } from '$lib/supabaseClient';
 
-	export let handleGoogleLogin: () => void;
-	export let handleGuestLogin: () => void;
+	let email = '';
+	let emailSent = false;
+	let errorMessage = '';
+
+	const handleEmailLogin = async () => {
+		try {
+			await supabase.auth.signInWithOtp({
+				email: email,
+				options: {
+					emailRedirectTo: window.location.origin
+				}
+			});
+			emailSent = true;
+		} catch (err) {
+			errorMessage = err.message;
+		}
+	};
 </script>
 
 <div class="mx-auto w-full max-w-md space-y-4">
 	<h1 class="mb-6 text-center text-2xl font-bold">{$_('login.header')}</h1>
 
 	<button
-		on:click={handleGoogleLogin}
+		on:click={loginWithGoogle}
 		type="button"
 		class="btn flex w-full items-center justify-center preset-filled"
 	>
@@ -35,14 +52,35 @@
 		{$_('login.google')}
 	</button>
 
-	<button type="button" class="btn w-full preset-filled" on:click={handleGuestLogin}>
-		<Mail class="mr-2" />
-		{$_('login.email')}
-	</button>
+	{#if emailSent}
+		<div class="text-center">
+			<p>{$_('login.emailSent')}</p>
+		</div>
+	{:else}
+		<form on:submit|preventDefault={handleEmailLogin} class="space-y-2">
+			<div class="space-y-2">
+				<label for="email" class="block text-sm font-medium">{$_('login.emailLabel')}</label>
+				<input
+					id="email"
+					type="email"
+					bind:value={email}
+					required
+					class="input w-full rounded border-surface-300 bg-surface-50"
+				/>
+			</div>
+			<button type="submit" class="btn w-full preset-filled">
+				<Mail class="mr-2" />
+				{$_('login.email')}
+			</button>
+			{#if errorMessage}
+				<p class="text-red-500">{errorMessage}</p>
+			{/if}
+		</form>
+	{/if}
 
 	<hr class="hr border-surface-950-50" />
 
-	<button type="button" class="btn w-full preset-outlined" on:click={handleGuestLogin}>
+	<button type="button" class="btn w-full preset-outlined" on:click={loginAsGuest}>
 		{$_('login.guest')}
 	</button>
 </div>
