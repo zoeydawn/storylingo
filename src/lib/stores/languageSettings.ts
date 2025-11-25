@@ -20,10 +20,10 @@ export const displaySettings = derived(languageSettings, ($settings) => ({
 }));
 
 // Update helpers
-export const setTargetLanguage = (lang: Language | '') => {
+export const setTargetLanguage = (lang: Language) => {
 	languageSettings.update((settings) => ({ ...settings, targetLanguage: lang }));
 };
 
-export const setTargetLevel = (level: LanguageLevel | '') => {
+export const setTargetLevel = (level: LanguageLevel) => {
 	languageSettings.update((settings) => ({ ...settings, targetLevel: level }));
 };

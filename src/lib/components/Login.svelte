@@ -17,8 +17,8 @@
 				}
 			});
 			emailSent = true;
-		} catch (err) {
-			errorMessage = err.message;
+		} catch (err: unknown) {
+			errorMessage = err instanceof Error ? err.message : 'An unknown error occurred';
 		}
 	};
 </script>

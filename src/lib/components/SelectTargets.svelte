@@ -4,12 +4,7 @@
 
 	import { _ } from 'svelte-i18n';
 	import Login from '$lib/components/Login.svelte';
-	import {
-		displaySettings,
-		setTargetLevel,
-		setTargetLanguage,
-		loginAsGuest
-	} from '$lib/stores';
+	import { displaySettings, setTargetLevel, setTargetLanguage } from '$lib/stores';
 	import { languages, levels, type Language, type LanguageLevel } from '$lib';
 	// import { goto } from '$app/navigation';
 	// import { resolve } from '$app/paths';
@@ -17,7 +12,6 @@
 	type Step = 'language' | 'level' | 'none' | 'login';
 	// State management
 	let currentStep: Step = 'language';
-
 
 	// Handle language selection
 	function selectLanguage(languageId: Language) {
@@ -48,8 +42,8 @@
 
 		setTimeout(() => {
 			currentStep = step;
-			setTargetLanguage('');
-			setTargetLevel('');
+			// setTargetLanguage('');
+			// setTargetLevel('');
 		}, 300);
 	}
 </script>
