@@ -5,7 +5,7 @@
 		setTargetLanguage,
 		languageSettings,
 		setTargetLevel
-	} from '../../stores/languageSettings';
+	} from '$lib/stores';
 
 	function handleLanguageChange(event: Event) {
 		const target = event.target as HTMLSelectElement;
