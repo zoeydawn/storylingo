@@ -41,6 +41,7 @@
 	},
 	"dependencies": {
 		"@lucide/svelte": "^0.553.0",
+		"@supabase/supabase-js": "^2.84.0",
 		"openai": "^6.9.0",
 		"svelte-i18n": "^4.0.1"
 	}
