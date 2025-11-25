@@ -28,7 +28,7 @@
 		"header": "Login",
 		"google": "Login with Google",
 		"email": "Login with Email",
-		"emailSent": "Email Sent",
+		"emailSent": "We just sent you an email with the login link",
 		"guest": "Continue as Guest"
 	},
 	"navigation": {
