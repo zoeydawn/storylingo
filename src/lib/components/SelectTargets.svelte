@@ -18,19 +18,6 @@
 	// State management
 	let currentStep: Step = 'language';
 
-	// handleGoogleLogin
-	function handleGoogleLogin() {
-		console.log('Google login clicked');
-	}
-
-	// handleGuestLogin
-	function handleGuestLogin() {
-		console.log('Guest login clicked');
-
-		loginAsGuest();
-
-		// goto(resolve('/story'));
-	}
 
 	// Handle language selection
 	function selectLanguage(languageId: Language) {
@@ -113,7 +100,7 @@
 		<button type="button" class="btn preset-outlined" on:click={() => resetSelection('level')}>
 			← Back
 		</button>
-		<Login {handleGoogleLogin} {handleGuestLogin} />
+		<Login />
 	</div>
 {/if}
 
