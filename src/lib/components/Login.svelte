@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { _ } from 'svelte-i18n';
 	import { Mail } from '@lucide/svelte';
-	import { loginAsGuest, loginWithGoogle } from '$stores/authStore';
+	import { loginAsGuest, loginWithGoogle } from '$lib/stores';
 	import { supabase } from '$lib/supabaseClient';
 
 	let email = '';
