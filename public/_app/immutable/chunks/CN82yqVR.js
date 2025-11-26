@@ -9,41 +9,41 @@ import {
   f as h,
   h as v,
   i as k,
-} from './ZIxVAD3j.js';
+} from './ZIxVAD3j.js'
 function x(n = !1) {
   const s = g,
-    e = s.l.u;
-  if (!e) return;
-  let o = () => h(s.s);
+    e = s.l.u
+  if (!e) return
+  let o = () => h(s.s)
   if (n) {
     let a = 0,
-      t = {};
+      t = {}
     const _ = v(() => {
-      let c = !1;
-      const r = s.s;
-      for (const f in r) r[f] !== t[f] && ((t[f] = r[f]), (c = !0));
-      return (c && a++, a);
-    });
-    o = () => p(_);
+      let c = !1
+      const r = s.s
+      for (const f in r) r[f] !== t[f] && ((t[f] = r[f]), (c = !0))
+      return (c && a++, a)
+    })
+    o = () => p(_)
   }
-  (e.b.length &&
+  ;(e.b.length &&
     d(() => {
-      (u(s, o), i(e.b));
+      ;(u(s, o), i(e.b))
     }),
     l(() => {
-      const a = b(() => e.m.map(m));
+      const a = b(() => e.m.map(m))
       return () => {
-        for (const t of a) typeof t == 'function' && t();
-      };
+        for (const t of a) typeof t == 'function' && t()
+      }
     }),
     e.a.length &&
       l(() => {
-        (u(s, o), i(e.a));
-      }));
+        ;(u(s, o), i(e.a))
+      }))
 }
 function u(n, s) {
-  if (n.l.s) for (const e of n.l.s) p(e);
-  s();
+  if (n.l.s) for (const e of n.l.s) p(e)
+  s()
 }
-k();
-export { x as i };
+k()
+export { x as i }

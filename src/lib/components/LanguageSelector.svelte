@@ -1,29 +1,29 @@
 <script lang="ts">
-  import { locale } from 'svelte-i18n';
-  import { onMount } from 'svelte';
-  import { Languages } from '@lucide/svelte';
-  let currentLang = 'en'; // default
+  import { locale } from 'svelte-i18n'
+  import { onMount } from 'svelte'
+  import { Languages } from '@lucide/svelte'
+  let currentLang = 'en' // default
 
   const languages: Record<string, string> = {
     en: 'English',
     es: 'Español',
     fr: 'Français',
-  };
+  }
 
   function changeLanguage(lang: string): void {
-    currentLang = lang;
-    locale.set(lang); // Use locale.set instead of set
+    currentLang = lang
+    locale.set(lang) // Use locale.set instead of set
     // Optional: save preference
-    localStorage.setItem('lang', lang);
+    localStorage.setItem('lang', lang)
   }
 
   // Restore saved language on mount
   onMount(() => {
-    const saved = localStorage.getItem('lang');
+    const saved = localStorage.getItem('lang')
     if (saved && languages[saved]) {
-      changeLanguage(saved);
+      changeLanguage(saved)
     }
-  });
+  })
 </script>
 
 <div class="flex">

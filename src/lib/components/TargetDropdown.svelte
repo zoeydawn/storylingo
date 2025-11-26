@@ -1,16 +1,16 @@
 <script lang="ts">
-  import { languages, levels, type Language, type LanguageLevel } from '$lib';
-  import { _ } from 'svelte-i18n';
-  import { setTargetLanguage, languageSettings, setTargetLevel } from '$lib/stores';
+  import { languages, levels, type Language, type LanguageLevel } from '$lib'
+  import { _ } from 'svelte-i18n'
+  import { setTargetLanguage, languageSettings, setTargetLevel } from '$lib/stores'
 
   function handleLanguageChange(event: Event) {
-    const target = event.target as HTMLSelectElement;
-    setTargetLanguage(target.value as Language);
+    const target = event.target as HTMLSelectElement
+    setTargetLanguage(target.value as Language)
   }
 
   function handleLevelChange(event: Event) {
-    const target = event.target as HTMLSelectElement;
-    setTargetLevel(target.value as LanguageLevel);
+    const target = event.target as HTMLSelectElement
+    setTargetLevel(target.value as LanguageLevel)
   }
 </script>
 

@@ -1,9 +1,9 @@
 <script lang="ts">
-  import { RefreshCw } from '@lucide/svelte';
-  import { languagesByCode, type LanguageString } from '$lib';
-  import StoryDisplay from '$lib/components/StoryDisplay.svelte';
-  import TargetDropdown from '$lib/components/TargetDropdown.svelte';
-  import { languageSettings } from '$lib/stores/languageSettings';
+  import { RefreshCw } from '@lucide/svelte'
+  import { languagesByCode, type LanguageString } from '$lib'
+  import StoryDisplay from '$lib/components/StoryDisplay.svelte'
+  import TargetDropdown from '$lib/components/TargetDropdown.svelte'
+  import { languageSettings } from '$lib/stores/languageSettings'
 
   // TODO: integrate i18n in this page
 
@@ -33,24 +33,24 @@
     'A night at the enchanted castle',
     'The mystery of the disappearing stars',
     'A quest to find the lost city',
-  ];
+  ]
 
-  let storyTopic = storyTopics[Math.floor(Math.random() * storyTopics.length)];
-  let storyContent = '';
-  let storyTitle = '';
-  let isLoading = false;
-  let error: string | null = null;
+  let storyTopic = storyTopics[Math.floor(Math.random() * storyTopics.length)]
+  let storyContent = ''
+  let storyTitle = ''
+  let isLoading = false
+  let error: string | null = null
 
   async function generateStory(event: Event) {
-    event.preventDefault();
-    if (!storyTopic.trim()) return;
+    event.preventDefault()
+    if (!storyTopic.trim()) return
 
-    isLoading = true;
-    error = null;
-    storyContent = '';
+    isLoading = true
+    error = null
+    storyContent = ''
 
     try {
-      const language: LanguageString = languagesByCode[$languageSettings.targetLanguage];
+      const language: LanguageString = languagesByCode[$languageSettings.targetLanguage]
 
       const response = await fetch('/story/generate', {
         method: 'POST',
@@ -62,21 +62,21 @@
           language,
           level: $languageSettings.targetLevel,
         }),
-      });
+      })
 
       if (!response.ok) {
-        throw new Error(`Server responded with ${response.status}`);
+        throw new Error(`Server responded with ${response.status}`)
       }
 
-      const data = await response.json();
+      const data = await response.json()
 
-      storyTitle = data.title;
-      storyContent = data.body;
+      storyTitle = data.title
+      storyContent = data.body
     } catch (err) {
-      console.error('Story generation failed:', err);
-      error = 'Failed to generate story. Please try again.';
+      console.error('Story generation failed:', err)
+      error = 'Failed to generate story. Please try again.'
     } finally {
-      isLoading = false;
+      isLoading = false
     }
   }
 </script>

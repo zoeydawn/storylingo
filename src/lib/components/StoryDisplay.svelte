@@ -1,9 +1,9 @@
 <script lang="ts">
-  import { copyToClipboard } from '$lib/utils';
-  import { Star, Copy, RefreshCcw } from '@lucide/svelte';
+  import { copyToClipboard } from '$lib/utils'
+  import { Star, Copy, RefreshCcw } from '@lucide/svelte'
 
-  export let storyContent: string;
-  export let storyTitle: string;
+  export let storyContent: string
+  export let storyTitle: string
 </script>
 
 <div class="card preset-filled-surface-100-900 w-full p-4">

@@ -1,9 +1,9 @@
 <script lang="ts">
-  import { _ } from 'svelte-i18n';
-  import SelectTargets from '$lib/components/SelectTargets.svelte';
-  import { authStore } from '$lib/stores/authStore';
-  import { goto } from '$app/navigation';
-  import { resolve } from '$app/paths';
+  import { _ } from 'svelte-i18n'
+  import SelectTargets from '$lib/components/SelectTargets.svelte'
+  import { authStore } from '$lib/stores/authStore'
+  import { goto } from '$app/navigation'
+  import { resolve } from '$app/paths'
 </script>
 
 <div class="mx-auto max-w-md p-6">

@@ -1,12 +1,12 @@
 <script lang="ts">
-  import { _ } from 'svelte-i18n';
-  import { Mail } from '@lucide/svelte';
-  import { loginAsGuest, loginWithGoogle } from '$lib/stores';
-  import { supabase } from '$lib/supabaseClient';
+  import { _ } from 'svelte-i18n'
+  import { Mail } from '@lucide/svelte'
+  import { loginAsGuest, loginWithGoogle } from '$lib/stores'
+  import { supabase } from '$lib/supabaseClient'
 
-  let email = '';
-  let emailSent = false;
-  let errorMessage = '';
+  let email = ''
+  let emailSent = false
+  let errorMessage = ''
 
   const handleEmailLogin = async () => {
     try {
@@ -15,12 +15,12 @@
         options: {
           emailRedirectTo: window.location.origin,
         },
-      });
-      emailSent = true;
+      })
+      emailSent = true
     } catch (err: unknown) {
-      errorMessage = err instanceof Error ? err.message : 'An unknown error occurred';
+      errorMessage = err instanceof Error ? err.message : 'An unknown error occurred'
     }
-  };
+  }
 </script>
 
 <div class="mx-auto w-full max-w-md space-y-4">

@@ -1,4 +1,4 @@
-import { c as b, a as f, f as y, e as H, s as D } from '../chunks/7vpOr-8R.js';
+import { c as b, a as f, f as y, e as H, s as D } from '../chunks/7vpOr-8R.js'
 import {
   p as P,
   k as L,
@@ -14,7 +14,7 @@ import {
   P as Q,
   aS as V,
   R as B,
-} from '../chunks/ZIxVAD3j.js';
+} from '../chunks/ZIxVAD3j.js'
 import {
   c as N,
   d as X,
@@ -24,10 +24,10 @@ import {
   e as q,
   g as K,
   h as Z,
-} from '../chunks/DRn3GchK.js';
-import { i as J } from '../chunks/CN82yqVR.js';
-import { o as U } from '../chunks/C02OHdzv.js';
-import { s as G, r as w, i as E } from '../chunks/DpJNoy2a.js';
+} from '../chunks/DRn3GchK.js'
+import { i as J } from '../chunks/CN82yqVR.js'
+import { o as U } from '../chunks/C02OHdzv.js'
+import { s as G, r as w, i as E } from '../chunks/DpJNoy2a.js'
 const Y = {
     select: 'What Language are you learning?',
     en: 'English',
@@ -82,14 +82,14 @@ const Y = {
     zh: 'Chinois',
   },
   ce = { home: 'Accueil', lessons: 'Leçons', profile: 'Profil' },
-  ue = { language: ie, nav: ce };
-N('en', se);
-N('es', le);
-N('fr', ue);
-X({ fallbackLocale: 'en', initialLocale: 'en' });
+  ue = { language: ie, nav: ce }
+N('en', se)
+N('es', le)
+N('fr', ue)
+X({ fallbackLocale: 'en', initialLocale: 'en' })
 function fe(n, e) {
-  P(e, !0);
-  let t = w(e, ['$$slots', '$$events', '$$legacy']);
+  P(e, !0)
+  let t = w(e, ['$$slots', '$$events', '$$legacy'])
   const r = [
     ['path', { d: 'm5 8 6 6' }],
     ['path', { d: 'm4 14 6-6 2-3' }],
@@ -97,46 +97,46 @@ function fe(n, e) {
     ['path', { d: 'M7 2h1' }],
     ['path', { d: 'm22 22-5-10-5 10' }],
     ['path', { d: 'M14 18h6' }],
-  ];
-  (T(
+  ]
+  ;(T(
     n,
     G({ name: 'languages' }, () => t, {
       get iconNode() {
-        return r;
+        return r
       },
       children: (a, v) => {
         var i = b(),
-          c = p(i);
-        (_(c, () => e.children ?? S), f(a, i));
+          c = p(i)
+        ;(_(c, () => e.children ?? S), f(a, i))
       },
       $$slots: { default: !0 },
     })
   ),
-    L());
+    L())
 }
 function ve(n, e) {
-  P(e, !0);
-  let t = w(e, ['$$slots', '$$events', '$$legacy']);
+  P(e, !0)
+  let t = w(e, ['$$slots', '$$events', '$$legacy'])
   const r = [
     ['path', { d: 'M4 5h16' }],
     ['path', { d: 'M4 12h16' }],
     ['path', { d: 'M4 19h16' }],
-  ];
-  (T(
+  ]
+  ;(T(
     n,
     G({ name: 'menu' }, () => t, {
       get iconNode() {
-        return r;
+        return r
       },
       children: (a, v) => {
         var i = b(),
-          c = p(i);
-        (_(c, () => e.children ?? S), f(a, i));
+          c = p(i)
+        ;(_(c, () => e.children ?? S), f(a, i))
       },
       $$slots: { default: !0 },
     })
   ),
-    L());
+    L())
 }
 const M = {
   root: 'skb:w-full skb:bg-surface-100-900 skb:p-4 skb:space-y-4',
@@ -144,16 +144,16 @@ const M = {
   lead: '',
   headline: '',
   trail: 'skb:flex skb:gap-2',
-};
+}
 var R = (n) => typeof n == 'string',
-  de = Function.prototype.toString;
-de.call(Object);
+  de = Function.prototype.toString
+de.call(Object)
 var ge =
     (...n) =>
     (...e) => {
       n.forEach(function (t) {
-        t?.(...e);
-      });
+        t?.(...e)
+      })
     },
   he = (...n) =>
     n
@@ -162,52 +162,52 @@ var ge =
       .join(' '),
   me = /((?:--)?(?:\w+-?)+)\s*:\s*([^;]*)/g,
   F = (n) => {
-    const e = {};
-    let t;
-    for (; (t = me.exec(n)); ) e[t[1]] = t[2];
-    return e;
+    const e = {}
+    let t
+    for (; (t = me.exec(n)); ) e[t[1]] = t[2]
+    return e
   },
   pe = (n, e) => {
     if (R(n)) {
-      if (R(e)) return `${n};${e}`;
-      n = F(n);
-    } else R(e) && (e = F(e));
-    return Object.assign({}, n ?? {}, e ?? {});
-  };
+      if (R(e)) return `${n};${e}`
+      n = F(n)
+    } else R(e) && (e = F(e))
+    return Object.assign({}, n ?? {}, e ?? {})
+  }
 function _e(...n) {
-  let e = {};
+  let e = {}
   for (let t of n) {
-    if (!t) continue;
+    if (!t) continue
     for (let a in e) {
       if (a.startsWith('on') && typeof e[a] == 'function' && typeof t[a] == 'function') {
-        e[a] = ge(t[a], e[a]);
-        continue;
+        e[a] = ge(t[a], e[a])
+        continue
       }
       if (a === 'className' || a === 'class') {
-        e[a] = he(e[a], t[a]);
-        continue;
+        e[a] = he(e[a], t[a])
+        continue
       }
       if (a === 'style') {
-        e[a] = pe(e[a], t[a]);
-        continue;
+        e[a] = pe(e[a], t[a])
+        continue
       }
-      e[a] = t[a] !== void 0 ? t[a] : e[a];
+      e[a] = t[a] !== void 0 ? t[a] : e[a]
     }
-    for (let a in t) e[a] === void 0 && (e[a] = t[a]);
-    const r = Object.getOwnPropertySymbols(t);
-    for (let a of r) e[a] = t[a];
+    for (let a in t) e[a] === void 0 && (e[a] = t[a])
+    const r = Object.getOwnPropertySymbols(t)
+    for (let a of r) e[a] = t[a]
   }
-  return e;
+  return e
 }
 function be(n) {
   return new Proxy(
     {},
     {
       get(e, t) {
-        return t === 'style' ? (r) => n({ style: r }).style : n;
+        return t === 'style' ? (r) => n({ style: r }).style : n
       },
     }
-  );
+  )
 }
 const O = {
   className: 'class',
@@ -218,236 +218,236 @@ const O = {
   onChange: 'oninput',
   onFocus: 'onfocusin',
   onDoubleClick: 'ondblclick',
-};
+}
 function W(n) {
-  let e = '';
+  let e = ''
   for (let t in n) {
-    const r = n[t];
+    const r = n[t]
     r != null &&
       (t.startsWith('--') || (t = t.replace(/[A-Z]/g, (a) => `-${a.toLowerCase()}`)),
-      (e += `${t}:${r};`));
+      (e += `${t}:${r};`))
   }
-  return e;
+  return e
 }
 const ye = new Set(
   'viewBox,className,preserveAspectRatio,fillRule,clipPath,clipRule,strokeWidth,strokeLinecap,strokeLinejoin,strokeDasharray,strokeDashoffset,strokeMiterlimit'.split(
     ','
   )
-);
+)
 function $e(n) {
-  return n in O ? O[n] : ye.has(n) ? n : n.toLowerCase();
+  return n in O ? O[n] : ye.has(n) ? n : n.toLowerCase()
 }
 function ke(n, e) {
-  return n === 'style' && typeof e == 'object' ? W(e) : e;
+  return n === 'style' && typeof e == 'object' ? W(e) : e
 }
 be((n) => {
-  const e = {};
-  for (const t in n) e[$e(t)] = ke(t, n[t]);
-  return e;
-});
+  const e = {}
+  for (const t in n) e[$e(t)] = ke(t, n[t])
+  return e
+})
 const Pe = /((?:--)?(?:\w+-?)+)\s*:\s*([^;]*)/g,
   Le = (n) => {
-    const e = {};
-    let t;
-    for (; (t = Pe.exec(n)); ) e[t[1]] = t[2];
-    return e;
-  };
+    const e = {}
+    let t
+    for (; (t = Pe.exec(n)); ) e[t[1]] = t[2]
+    return e
+  }
 function j(...n) {
-  const e = [];
-  for (const r of n) r && 'class' in r && r.class != null && e.push(r.class);
-  const t = _e(...n);
+  const e = []
+  for (const r of n) r && 'class' in r && r.class != null && e.push(r.class)
+  const t = _e(...n)
   return (
     e.length > 0 && (t.class = e.length === 1 ? e[0] : e),
     'style' in t && (typeof t.style == 'string' && (t.style = Le(t.style)), (t.style = W(t.style))),
     t
-  );
+  )
 }
-var Se = y('<div><!></div>');
+var Se = y('<div><!></div>')
 function we(n, e) {
-  P(e, !0);
+  P(e, !0)
   const t = w(e, ['$$slots', '$$events', '$$legacy']),
     r = d(() => e.element),
     a = d(() => e.children),
     v = d(() => C(t, ['element', 'children'])),
-    i = d(() => j({ class: M.headline }, l(v)));
+    i = d(() => j({ class: M.headline }, l(v)))
   var c = b(),
-    u = p(c);
+    u = p(c)
   {
     var g = (o) => {
         var s = b(),
-          h = p(s);
-        (_(
+          h = p(s)
+        ;(_(
           h,
           () => l(r),
           () => l(i)
         ),
-          f(o, s));
+          f(o, s))
       },
       m = (o) => {
-        var s = Se();
-        A(s, () => ({ ...l(i) }));
-        var h = k(s);
-        (_(h, () => l(a) ?? S), $(s), f(o, s));
-      };
+        var s = Se()
+        A(s, () => ({ ...l(i) }))
+        var h = k(s)
+        ;(_(h, () => l(a) ?? S), $(s), f(o, s))
+      }
     E(u, (o) => {
-      l(r) ? o(g) : o(m, !1);
-    });
+      l(r) ? o(g) : o(m, !1)
+    })
   }
-  (f(n, c), L());
+  ;(f(n, c), L())
 }
-var xe = y('<nav><!></nav>');
+var xe = y('<nav><!></nav>')
 function Ce(n, e) {
-  P(e, !0);
+  P(e, !0)
   const t = w(e, ['$$slots', '$$events', '$$legacy']),
     r = d(() => e.element),
     a = d(() => e.children),
     v = d(() => C(t, ['element', 'children'])),
-    i = d(() => j({ class: M.lead }, l(v)));
+    i = d(() => j({ class: M.lead }, l(v)))
   var c = b(),
-    u = p(c);
+    u = p(c)
   {
     var g = (o) => {
         var s = b(),
-          h = p(s);
-        (_(
+          h = p(s)
+        ;(_(
           h,
           () => l(r),
           () => l(i)
         ),
-          f(o, s));
+          f(o, s))
       },
       m = (o) => {
-        var s = xe();
-        A(s, () => ({ ...l(i) }));
-        var h = k(s);
-        (_(h, () => l(a) ?? S), $(s), f(o, s));
-      };
+        var s = xe()
+        A(s, () => ({ ...l(i) }))
+        var h = k(s)
+        ;(_(h, () => l(a) ?? S), $(s), f(o, s))
+      }
     E(u, (o) => {
-      l(r) ? o(g) : o(m, !1);
-    });
+      l(r) ? o(g) : o(m, !1)
+    })
   }
-  (f(n, c), L());
+  ;(f(n, c), L())
 }
-var Ae = y('<header><!></header>');
+var Ae = y('<header><!></header>')
 function Ee(n, e) {
-  P(e, !0);
+  P(e, !0)
   const t = w(e, ['$$slots', '$$events', '$$legacy']),
     r = d(() => e.element),
     a = d(() => e.children),
     v = d(() => C(t, ['element', 'children'])),
-    i = d(() => j({ class: M.root }, l(v)));
+    i = d(() => j({ class: M.root }, l(v)))
   var c = b(),
-    u = p(c);
+    u = p(c)
   {
     var g = (o) => {
         var s = b(),
-          h = p(s);
-        (_(
+          h = p(s)
+        ;(_(
           h,
           () => l(r),
           () => l(i)
         ),
-          f(o, s));
+          f(o, s))
       },
       m = (o) => {
-        var s = Ae();
-        A(s, () => ({ ...l(i) }));
-        var h = k(s);
-        (_(h, () => l(a) ?? S), $(s), f(o, s));
-      };
+        var s = Ae()
+        A(s, () => ({ ...l(i) }))
+        var h = k(s)
+        ;(_(h, () => l(a) ?? S), $(s), f(o, s))
+      }
     E(u, (o) => {
-      l(r) ? o(g) : o(m, !1);
-    });
+      l(r) ? o(g) : o(m, !1)
+    })
   }
-  (f(n, c), L());
+  ;(f(n, c), L())
 }
-var Me = y('<div><!></div>');
+var Me = y('<div><!></div>')
 function je(n, e) {
-  P(e, !0);
+  P(e, !0)
   const t = w(e, ['$$slots', '$$events', '$$legacy']),
     r = d(() => e.element),
     a = d(() => e.children),
     v = d(() => C(t, ['element', 'children'])),
-    i = d(() => j({ class: M.toolbar }, l(v)));
+    i = d(() => j({ class: M.toolbar }, l(v)))
   var c = b(),
-    u = p(c);
+    u = p(c)
   {
     var g = (o) => {
         var s = b(),
-          h = p(s);
-        (_(
+          h = p(s)
+        ;(_(
           h,
           () => l(r),
           () => l(i)
         ),
-          f(o, s));
+          f(o, s))
       },
       m = (o) => {
-        var s = Me();
-        A(s, () => ({ ...l(i) }));
-        var h = k(s);
-        (_(h, () => l(a) ?? S), $(s), f(o, s));
-      };
+        var s = Me()
+        A(s, () => ({ ...l(i) }))
+        var h = k(s)
+        ;(_(h, () => l(a) ?? S), $(s), f(o, s))
+      }
     E(u, (o) => {
-      l(r) ? o(g) : o(m, !1);
-    });
+      l(r) ? o(g) : o(m, !1)
+    })
   }
-  (f(n, c), L());
+  ;(f(n, c), L())
 }
-var Ie = y('<nav><!></nav>');
+var Ie = y('<nav><!></nav>')
 function Re(n, e) {
-  P(e, !0);
+  P(e, !0)
   const t = w(e, ['$$slots', '$$events', '$$legacy']),
     r = d(() => e.element),
     a = d(() => e.children),
     v = d(() => C(t, ['element', 'children'])),
-    i = d(() => j({ class: M.trail }, l(v)));
+    i = d(() => j({ class: M.trail }, l(v)))
   var c = b(),
-    u = p(c);
+    u = p(c)
   {
     var g = (o) => {
         var s = b(),
-          h = p(s);
-        (_(
+          h = p(s)
+        ;(_(
           h,
           () => l(r),
           () => l(i)
         ),
-          f(o, s));
+          f(o, s))
       },
       m = (o) => {
-        var s = Ie();
-        A(s, () => ({ ...l(i) }));
-        var h = k(s);
-        (_(h, () => l(a) ?? S), $(s), f(o, s));
-      };
+        var s = Ie()
+        A(s, () => ({ ...l(i) }))
+        var h = k(s)
+        ;(_(h, () => l(a) ?? S), $(s), f(o, s))
+      }
     E(u, (o) => {
-      l(r) ? o(g) : o(m, !1);
-    });
+      l(r) ? o(g) : o(m, !1)
+    })
   }
-  (f(n, c), L());
+  ;(f(n, c), L())
 }
-const x = Object.assign(Ee, { Toolbar: je, Lead: Ce, Headline: we, Trail: Re });
+const x = Object.assign(Ee, { Toolbar: je, Lead: Ce, Headline: we, Trail: Re })
 var Ne = y('<option> </option>'),
-  ze = y('<div class="flex"><!> <select class="select ml-1 cursor-pointer"></select></div>');
+  ze = y('<div class="flex"><!> <select class="select ml-1 cursor-pointer"></select></div>')
 function Be(n, e) {
-  P(e, !1);
-  let t = Q('en');
-  const r = { en: 'English', es: 'Español', fr: 'Français' };
+  P(e, !1)
+  let t = Q('en')
+  const r = { en: 'English', es: 'Español', fr: 'Français' }
   function a(u) {
-    (B(t, u), Z.set(u), localStorage.setItem('lang', u));
+    ;(B(t, u), Z.set(u), localStorage.setItem('lang', u))
   }
-  (U(() => {
-    const u = localStorage.getItem('lang');
-    u && r[u] && a(u);
+  ;(U(() => {
+    const u = localStorage.getItem('lang')
+    u && r[u] && a(u)
   }),
-    J());
+    J())
   var v = ze(),
-    i = k(v);
-  fe(i, {});
-  var c = I(i, 2);
-  (z(() => {
-    (l(t), V(() => {}));
+    i = k(v)
+  fe(i, {})
+  var c = I(i, 2)
+  ;(z(() => {
+    ;(l(t), V(() => {}))
   }),
     q(
       c,
@@ -456,13 +456,13 @@ function Be(n, e) {
       (u) => u,
       (u, g) => {
         var m = Ne(),
-          o = k(m, !0);
-        $(m);
-        var s = {};
-        (z(() => {
-          (D(o, r[l(g)]), s !== (s = l(g)) && (m.value = (m.__value = l(g)) ?? ''));
+          o = k(m, !0)
+        $(m)
+        var s = {}
+        ;(z(() => {
+          ;(D(o, r[l(g)]), s !== (s = l(g)) && (m.value = (m.__value = l(g)) ?? ''))
         }),
-          f(u, m));
+          f(u, m))
       }
     ),
     $(c),
@@ -474,11 +474,11 @@ function Be(n, e) {
     ),
     H('change', c, () => a(l(t))),
     f(n, v),
-    L());
+    L())
 }
 var Fe = y('<button type="button" class="btn-icon btn-icon-lg hover:preset-tonal"><!></button>'),
   Oe = y('<p class="text-2xl">StoryLingo</p>'),
-  Te = y('<!> <!> <!>', 1);
+  Te = y('<!> <!> <!>', 1)
 function Ge(n) {
   x(n, {
     children: (e, t) => {
@@ -486,45 +486,45 @@ function Ge(n) {
         class: 'grid-cols-[auto_1fr_auto]',
         children: (r, a) => {
           var v = Te(),
-            i = p(v);
+            i = p(v)
           x.Lead(i, {
             children: (g, m) => {
               var o = Fe(),
-                s = k(o);
-              (ve(s, {}), $(o), f(g, o));
+                s = k(o)
+              ;(ve(s, {}), $(o), f(g, o))
             },
             $$slots: { default: !0 },
-          });
-          var c = I(i, 2);
+          })
+          var c = I(i, 2)
           x.Headline(c, {
             children: (g, m) => {
-              var o = Oe();
-              f(g, o);
+              var o = Oe()
+              f(g, o)
             },
             $$slots: { default: !0 },
-          });
-          var u = I(c, 2);
-          (x.Trail(u, {
+          })
+          var u = I(c, 2)
+          ;(x.Trail(u, {
             children: (g, m) => {
-              Be(g, {});
+              Be(g, {})
             },
             $$slots: { default: !0 },
           }),
-            f(r, v));
+            f(r, v))
         },
         $$slots: { default: !0 },
-      });
+      })
     },
     $$slots: { default: !0 },
-  });
+  })
 }
-var We = y('<!> <main class="svelte-12qhfyh"><!></main>', 1);
+var We = y('<!> <main class="svelte-12qhfyh"><!></main>', 1)
 function Ke(n, e) {
   var t = We(),
-    r = p(t);
-  Ge(r);
+    r = p(t)
+  Ge(r)
   var a = I(r, 2),
-    v = k(a);
-  (_(v, () => e.children), $(a), f(n, t));
+    v = k(a)
+  ;(_(v, () => e.children), $(a), f(n, t))
 }
-export { Ke as component };
+export { Ke as component }

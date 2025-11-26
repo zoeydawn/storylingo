@@ -1,50 +1,50 @@
 <script lang="ts">
-  import { fade } from 'svelte/transition';
-  import { quintOut } from 'svelte/easing';
+  import { fade } from 'svelte/transition'
+  import { quintOut } from 'svelte/easing'
 
-  import { _ } from 'svelte-i18n';
-  import Login from '$lib/components/Login.svelte';
-  import { displaySettings, setTargetLevel, setTargetLanguage } from '$lib/stores';
-  import { languages, levels, type Language, type LanguageLevel } from '$lib';
+  import { _ } from 'svelte-i18n'
+  import Login from '$lib/components/Login.svelte'
+  import { displaySettings, setTargetLevel, setTargetLanguage } from '$lib/stores'
+  import { languages, levels, type Language, type LanguageLevel } from '$lib'
   // import { goto } from '$app/navigation';
   // import { resolve } from '$app/paths';
 
-  type Step = 'language' | 'level' | 'none' | 'login';
+  type Step = 'language' | 'level' | 'none' | 'login'
   // State management
-  let currentStep: Step = 'language';
+  let currentStep: Step = 'language'
 
   // Handle language selection
   function selectLanguage(languageId: Language) {
-    setTargetLanguage(languageId);
-    currentStep = 'none';
+    setTargetLanguage(languageId)
+    currentStep = 'none'
     // Transition to level selection after a short delay for visual feedback
     setTimeout(() => {
-      currentStep = 'level';
-    }, 300);
+      currentStep = 'level'
+    }, 300)
   }
 
   // Handle level selection
   function selectLevel(levelId: LanguageLevel) {
-    setTargetLevel(levelId);
+    setTargetLevel(levelId)
 
-    console.log('Selected language:', $displaySettings.language, 'Level:', $displaySettings.level);
+    console.log('Selected language:', $displaySettings.language, 'Level:', $displaySettings.level)
 
-    currentStep = 'none';
+    currentStep = 'none'
 
     setTimeout(() => {
-      currentStep = 'login';
-    }, 300);
+      currentStep = 'login'
+    }, 300)
   }
 
   // Reset to language selection
   function resetSelection(step: Step) {
-    currentStep = 'none';
+    currentStep = 'none'
 
     setTimeout(() => {
-      currentStep = step;
+      currentStep = step
       // setTargetLanguage('');
       // setTargetLevel('');
-    }, 300);
+    }, 300)
   }
 </script>
 

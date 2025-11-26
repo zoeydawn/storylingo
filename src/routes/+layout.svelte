@@ -1,8 +1,8 @@
 <script lang="ts">
-  import '../app.css';
-  import '$lib/i18n.ts'; // Initialize i18n
-  import Navbar from '$lib/components/Navbar.svelte';
-  let { children } = $props();
+  import '../app.css'
+  import '$lib/i18n.ts' // Initialize i18n
+  import Navbar from '$lib/components/Navbar.svelte'
+  let { children } = $props()
 </script>
 
 <Navbar />
