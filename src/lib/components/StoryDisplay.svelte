@@ -1,13 +1,18 @@
 <script lang="ts">
   import { copyToClipboard } from '$lib/utils'
   import { Star, Copy, RefreshCcw } from '@lucide/svelte'
+  import { writable } from 'svelte/store'
 
   export let storyContent: string
   export let storyTitle: string
 
+  let copied = writable(false)
+
   const handleCopy = (e: Event, storyContent: string) => {
     e.preventDefault()
     copyToClipboard(storyContent)
+    copied.set(true)
+    setTimeout(() => copied.set(false), 1500)
   }
 </script>
 
@@ -23,7 +28,11 @@
         title="Copy to clipboard"
         aria-label="Copy story to clipboard"
       >
-        <Copy size={16} /> Copy
+        {#if $copied}
+          Copied!
+        {:else}
+          <Copy size={16} /> Copy
+        {/if}
       </button>
     </div>
     <div class="bg-primary-500 mt-2 h-1 w-12 rounded"></div>
