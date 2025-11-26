@@ -6,7 +6,6 @@
   "semi": false,
   "printWidth": 100,
   "plugins": ["prettier-plugin-svelte", "prettier-plugin-tailwindcss"],
-  "pluginSearchDeps": true,
   "overrides": [
     {
       "files": "*.svelte",
