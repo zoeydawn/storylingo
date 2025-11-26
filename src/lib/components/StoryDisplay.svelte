@@ -18,12 +18,12 @@
         {storyTitle}
       </h2>
       <button
-        class="btn-icon text-surface-500 hover:text-surface-700"
+        class="btn btn-sm text-surface-500 hover:text-surface-700"
         on:click={(e) => handleCopy(e, storyContent)}
         title="Copy to clipboard"
         aria-label="Copy story to clipboard"
       >
-        <Copy />
+        <Copy size={16} /> Copy
       </button>
     </div>
     <div class="bg-primary-500 mt-2 h-1 w-12 rounded"></div>
