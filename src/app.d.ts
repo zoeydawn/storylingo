@@ -15,10 +15,13 @@ declare global {
   }
 }
 
-interface ImportMeta {
-  env: {
-    PUBLIC_SUPABASE_URL: string
-    PUBLIC_SUPABASE_ANON_KEY: string
+declare global {
+  // Augment the ImportMeta interface for Vite environment variables
+  interface ImportMeta {
+    env: {
+      PUBLIC_SUPABASE_URL: string
+      PUBLIC_SUPABASE_ANON_KEY: string
+    }
   }
 }
 
