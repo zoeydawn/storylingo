@@ -4,6 +4,11 @@
 
   export let storyContent: string
   export let storyTitle: string
+
+  const handleCopy = (e: Event, storyContent: string) => {
+    e.preventDefault()
+    copyToClipboard(storyContent)
+  }
 </script>
 
 <div class="w-full p-4">
@@ -14,7 +19,7 @@
       </h2>
       <button
         class="btn-icon text-surface-500 hover:text-surface-700"
-        on:click={() => copyToClipboard(storyContent)}
+        on:click={(e) => handleCopy(e, storyContent)}
         title="Copy to clipboard"
         aria-label="Copy story to clipboard"
       >
