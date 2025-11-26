@@ -1,37 +1,37 @@
 {
-	"language": {
-		"select": "What Language are you learning?",
-		"en": "English",
-		"es": "Spanish",
-		"fr": "French",
-		"de": "German",
-		"it": "Italian",
-		"pt": "Portuguese",
-		"ru": "Russian",
-		"zh": "Chinese"
-	},
-	"level": {
-		"header": "What is your level?",
-		"labela1": "A1 - Beginner",
-		"labela2": "A2 - Elementary",
-		"labelb1": "B1 - Intermediate",
-		"labelb2": "B2 - Intermediate",
-		"labelc1": "C1 - Advanced",
-		"labelc2": "C2 - Proficient"
-	},
-	"nav": {
-		"home": "Home",
-		"lessons": "Lessons",
-		"profile": "Profile"
-	},
-	"login": {
-		"header": "Login",
-		"google": "Login with Google",
-		"email": "Login with Email",
-		"emailSent": "We just sent you an email with the login link",
-		"guest": "Continue as Guest"
-	},
-	"navigation": {
-		"generateStory": "Generate Micro-Story"
-	}
+  "language": {
+    "select": "What Language are you learning?",
+    "en": "English",
+    "es": "Spanish",
+    "fr": "French",
+    "de": "German",
+    "it": "Italian",
+    "pt": "Portuguese",
+    "ru": "Russian",
+    "zh": "Chinese"
+  },
+  "level": {
+    "header": "What is your level?",
+    "labela1": "A1 - Beginner",
+    "labela2": "A2 - Elementary",
+    "labelb1": "B1 - Intermediate",
+    "labelb2": "B2 - Intermediate",
+    "labelc1": "C1 - Advanced",
+    "labelc2": "C2 - Proficient"
+  },
+  "nav": {
+    "home": "Home",
+    "lessons": "Lessons",
+    "profile": "Profile"
+  },
+  "login": {
+    "header": "Login",
+    "google": "Login with Google",
+    "email": "Login with Email",
+    "emailSent": "We just sent you an email with the login link",
+    "guest": "Continue as Guest"
+  },
+  "navigation": {
+    "generateStory": "Generate Micro-Story"
+  }
 }

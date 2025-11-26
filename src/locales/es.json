@@ -1,18 +1,18 @@
 {
-	"language": {
-		"select": "¿Qué idioma está aprendiendo?",
-		"en": "Inglés",
-		"es": "Español",
-		"fr": "Francés",
-		"de": "Alemán",
-		"it": "Italiano",
-		"pt": "Portugués",
-		"ru": "Ruso",
-		"zh": "Chino"
-	},
-	"nav": {
-		"home": "Inicio",
-		"lessons": "Lecciones",
-		"profile": "Perfil"
-	}
+  "language": {
+    "select": "¿Qué idioma está aprendiendo?",
+    "en": "Inglés",
+    "es": "Español",
+    "fr": "Francés",
+    "de": "Alemán",
+    "it": "Italiano",
+    "pt": "Portugués",
+    "ru": "Ruso",
+    "zh": "Chino"
+  },
+  "nav": {
+    "home": "Inicio",
+    "lessons": "Lecciones",
+    "profile": "Perfil"
+  }
 }
