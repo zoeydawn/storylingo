@@ -81,19 +81,18 @@
   }
 </script>
 
-<div class="m-auto mx-auto flex max-w-md flex-col items-center p-4">
-  <h3 class="mb-6 text-2xl font-bold">Create a Micro-Story</h3>
+<div class="m-auto mx-auto flex flex-col items-center p-4">
+  <h2 class="h2 mb-6 text-2xl font-bold">Create a Micro-Story</h2>
   <TargetDropdown />
 
-  <form class="w-full space-y-4 pt-1.5 pb-6" on:submit={generateStory}>
-    <fieldset class="align-center flex space-y-2">
+  <form class="flex w-full flex-col items-center space-y-4 pt-1.5 pb-6" on:submit={generateStory}>
+    <fieldset class="align-center flex w-full max-w-md space-y-2">
       <label class="label">
         <span class="label-text">Story Topic</span>
         <input
           class="input w-full"
           type="text"
           bind:value={storyTopic}
-          placeholder="Enter a topic (e.g., 'a cat in the park')"
           disabled={isLoading}
           required
         />
@@ -110,7 +109,7 @@
 
     <button
       type="submit"
-      class="btn preset-outlined-primary-500 w-full justify-center"
+      class="btn preset-outlined-primary-500 w-full max-w-md justify-center"
       disabled={isLoading || !storyTopic.trim()}
     >
       {#if isLoading}
@@ -121,16 +120,17 @@
     </button>
 
     {#if error}
-      <div class="mt-6 rounded-lg border border-red-300 bg-red-100 p-4 text-red-800">
+      <div class="mt-6 max-w-md rounded-lg border border-red-300 bg-red-100 p-4 text-red-800">
         {error}
       </div>
     {/if}
 
-    <div class="mt-8">
+    <div class="mt-8 w-full max-w-2xl">
       {#if storyContent}
         <StoryDisplay {storyContent} {storyTitle} />
       {:else if isLoading}
         <div class="space-y-4">
+          loading...
           <div class="h-6 w-1/2 animate-pulse rounded bg-gray-200"></div>
           <div class="h-4 w-full animate-pulse rounded bg-gray-200"></div>
           <div class="h-4 w-5/6 animate-pulse rounded bg-gray-200"></div>

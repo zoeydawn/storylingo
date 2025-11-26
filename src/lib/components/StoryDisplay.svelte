@@ -6,7 +6,7 @@
   export let storyTitle: string
 </script>
 
-<div class="card preset-filled-surface-100-900 w-full p-4">
+<div class="w-full p-4">
   <header class="mb-4">
     <div class="flex items-start justify-between">
       <h2 class="text-xl font-semibold">
@@ -23,7 +23,7 @@
     </div>
     <div class="bg-primary-500 mt-2 h-1 w-12 rounded"></div>
   </header>
-  <article class="space-y-4 p-4">
+  <article class="space-y-4">
     {#each storyContent.split('\n') as paragraph, index (index)}
       <p>{paragraph}</p>
     {/each}
