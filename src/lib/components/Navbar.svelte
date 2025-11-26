@@ -7,9 +7,7 @@
 <AppBar>
   <AppBar.Toolbar class="grid-cols-[auto_1fr_auto]">
     <AppBar.Lead>
-      <button type="button" class="btn-icon btn-icon-lg hover:preset-tonal"
-        ><MenuIcon /></button
-      >
+      <button type="button" class="btn-icon btn-icon-lg hover:preset-tonal"><MenuIcon /></button>
     </AppBar.Lead>
     <AppBar.Headline>
       <p class="text-2xl">StoryLingo</p>
