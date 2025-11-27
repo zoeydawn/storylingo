@@ -4,11 +4,7 @@
   import { Copy } from '@lucide/svelte'
   import { writable } from 'svelte/store'
 
-  interface Question {
-    question: string
-    answers: string[]
-    correctAnswer: number
-  }
+  import type { Question } from '$lib'
 
   export let storyContent: string
   export let storyTitle: string

@@ -38,11 +38,9 @@
   let storyTopic = storyTopics[Math.floor(Math.random() * storyTopics.length)]
   let storyContent = ''
   let storyTitle = ''
-  let storyQuestions: {
-    question: string
-    answers: string[]
-    correctAnswer: number
-  }[] = []
+  import type { Question } from '$lib'
+
+  let storyQuestions: Question[] = []
   let isLoading = false
   let error: string | null = null
 

@@ -27,3 +27,9 @@ export const languagesByCode: Record<Language, LanguageString> = {
   ru: 'Russian',
   zh: 'Chinese',
 }
+
+export interface Question {
+  question: string
+  answers: string[]
+  correctAnswer: number
+}
