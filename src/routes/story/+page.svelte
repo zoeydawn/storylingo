@@ -125,7 +125,7 @@
 
     {#if error}
       <div class="mt-6 max-w-md rounded-lg border border-red-300 bg-red-100 p-4 text-red-800">
-        {error}
+        {$_('story.errorMessage')}
       </div>
     {/if}
 
