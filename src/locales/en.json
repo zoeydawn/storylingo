@@ -38,5 +38,12 @@
     "submit": "Submit",
     "header": "Quiz",
     "clear": "Clear"
+  },
+  "story": {
+    "title": "Create a Micro-Story",
+    "topicLabel": "Story Topic",
+    "generateButton": "Generate Story",
+    "generatingButton": "Generating...",
+    "errorMessage": "Failed to generate story. Please try again."
   }
 }

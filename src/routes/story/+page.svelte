@@ -86,13 +86,13 @@
 </script>
 
 <div class="m-auto mx-auto flex flex-col items-center p-4">
-  <h2 class="h2 mb-6 text-2xl font-bold">Create a Micro-Story</h2>
+  <h2 class="h2 mb-6 text-2xl font-bold">{$_('story.title')}</h2>
   <TargetDropdown />
 
   <form class="flex w-full flex-col items-center space-y-4 pt-1.5 pb-6" on:submit={generateStory}>
     <fieldset class="align-center flex w-full max-w-md space-y-2">
       <label class="label">
-        <span class="label-text">Story Topic</span>
+        <span class="label-text">{$_('story.topicLabel')}</span>
         <input
           class="input w-full"
           type="text"
@@ -117,9 +117,9 @@
       disabled={isLoading || !storyTopic.trim()}
     >
       {#if isLoading}
-        Generating...
+        {$_('story.generatingButton')}
       {:else}
-        Generate Story
+        {$_('story.generateButton')}
       {/if}
     </button>
 
