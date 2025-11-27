@@ -43,14 +43,21 @@
           value={aIndex}
           bind:group={selectedAnswers[qIndex]}
         />
-        <p class:correct={isSubmitted && aIndex === question.correctAnswer}
+        <p class:correct={isSubmitted && selectedAnswers[qIndex] === question.correctAnswer && aIndex === question.correctAnswer}
            class:incorrect={isSubmitted && selectedAnswers[qIndex] === aIndex && aIndex !== question.correctAnswer}>
           {answer}
-          {isSubmitted && aIndex === question.correctAnswer && ' ✓'}
+          {isSubmitted && selectedAnswers[qIndex] === question.correctAnswer && aIndex === question.correctAnswer && ' ✓'}
         </p>
       </label>
     {/each}
   {/each}
+
+  {#if isSubmitted}
+    <div class="my-4 text-lg font-medium">
+      Score: {score}/{questions.length}
+      {#if perfectScore} 🎉{/if}
+    </div>
+  {/if}
 
   <div class="flex justify-center gap-4 mt-4">
     {#if isSubmitted && !perfectScore}
@@ -59,7 +66,7 @@
         class="btn preset-outlined-secondary-500"
         on:click={resetQuiz}
       >
-        Try Again
+        Clear
       </button>
     {/if}
     
@@ -69,11 +76,7 @@
       on:click={handleSubmit}
       disabled={!isSubmitted && selectedAnswers.includes(-1)}
     >
-      {isSubmitted 
-        ? perfectScore 
-          ? 'Perfect!  🎉' 
-          : `Score: ${score}/${questions.length}`
-        : 'Submit'}
+      Submit
     </button>
   </div>
 </div>
