@@ -38,6 +38,11 @@
   let storyTopic = storyTopics[Math.floor(Math.random() * storyTopics.length)]
   let storyContent = ''
   let storyTitle = ''
+  let storyQuestions: {
+    question: string
+    answers: string[]
+    correctAnswer: number
+  }[] = []
   let isLoading = false
   let error: string | null = null
 
@@ -72,6 +77,7 @@
 
       storyTitle = data.title
       storyContent = data.body
+      storyQuestions = data.questions
     } catch (err) {
       console.error('Story generation failed:', err)
       error = 'Failed to generate story. Please try again.'
@@ -127,10 +133,9 @@
 
     <div class="mt-8 w-full max-w-2xl">
       {#if storyContent}
-        <StoryDisplay {storyContent} {storyTitle} />
+        <StoryDisplay {storyContent} {storyTitle} {storyQuestions} />
       {:else if isLoading}
         <div class="space-y-4">
-          loading...
           <div class="h-6 w-1/2 animate-pulse rounded bg-gray-200"></div>
           <div class="h-4 w-full animate-pulse rounded bg-gray-200"></div>
           <div class="h-4 w-5/6 animate-pulse rounded bg-gray-200"></div>

@@ -26,8 +26,8 @@ export const POST: RequestHandler = async ({ request }) => {
       c1: 'Level C1, write fluently, flexibly, and with stylistic control. Manipulate grammar for emphasis, hedging, or irony. Draw on a vast lexical reservoir, including rare words and cultural references. Signal subtext, attitude, and layered meaning. Maintain cohesion across long, information-dense passages.',
       c2: 'Level C2, write with the precision and creativity of an educated native. Exploit every register, trope, and nuance the language allows. Play with rhythm, allusion, and lexical novelty. Persuade, amuse, or provoke without ever losing clarity, elegance, or idiomatic authenticity.',
     }
-
-    const prompt = `Create a 4-5 paragraph story in ${language} for someone learning the language. Use this following information:
+    const length = level === 'a1' || level === 'a2' ? 2 : 5
+    const prompt = `Create a story at least ${length} paragraph long in ${language} for someone learning the language. Use this following information:
 **Language**: ${language}
 **Topic**: ${topic}
 **Language Level**: ${levelInstructions[level]}
@@ -35,8 +35,14 @@ export const POST: RequestHandler = async ({ request }) => {
 Please provide the following properties:
 1. **Title**: A short and descriptive title
 2. **Body**: The story content with paragraphs separated by new lines
+3. **Questions**: An array of ${length} objects with the following structure: 
+    {
+        "question": <A question about the story to quiz the reader>,
+        "answers": <an array of 4 or 5 multiple choice answers>,
+        "correctAnswer": <a number corresponding to the index of the correct answer>
+    }
 
-Format the response as JSON with these exact keys: title and body.`
+Format the response as JSON with these exact keys: title, body, questions.`
 
     const response = await openai.chat.completions.create({
       model: 'gpt-3.5-turbo',
