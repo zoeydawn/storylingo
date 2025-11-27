@@ -4,6 +4,7 @@
   export let questions: Question[]
 
   let selectedAnswers: number[] = Array(questions.length).fill(-1)
+  let submittedAnswers: number[] = [] // Keep track of submitted answers so that we can highlight them
   let isSubmitted = false
   let score = 0
   let perfectScore = false
@@ -11,6 +12,8 @@
   function handleSubmit() {
     isSubmitted = true
     score = 0
+
+    submittedAnswers = [...selectedAnswers]
 
     // Calculate score
     questions.forEach((question, index) => {
@@ -25,6 +28,7 @@
   function resetQuiz() {
     isSubmitted = false
     selectedAnswers = Array(questions.length).fill(-1)
+    submittedAnswers = []
   }
 </script>
 
@@ -45,15 +49,15 @@
         />
         <p
           class:correct={isSubmitted &&
-            selectedAnswers[qIndex] === question.correctAnswer &&
+            submittedAnswers[qIndex] === question.correctAnswer &&
             aIndex === question.correctAnswer}
           class:incorrect={isSubmitted &&
-            selectedAnswers[qIndex] === aIndex &&
+            submittedAnswers[qIndex] === aIndex &&
             aIndex !== question.correctAnswer}
         >
           {answer}
           {isSubmitted &&
-            selectedAnswers[qIndex] === question.correctAnswer &&
+            submittedAnswers[qIndex] === question.correctAnswer &&
             aIndex === question.correctAnswer &&
             ' ✓'}
         </p>
