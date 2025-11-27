@@ -7,12 +7,12 @@
 <div class="card preset-filled-surface-100-900 mt-7 w-full p-4 text-center">
   <h6 class="h4">Questions</h6>
 
-  {#each questions as question, index (index)}
+  {#each questions as question, qIndex (qIndex)}
     <h6 class="h6 mt-4">{question.question}</h6>
 
-    {#each question.answers as answer, index (index)}
+    {#each question.answers as answer, aIndex (aIndex)}
       <label class="flex items-center space-x-2">
-        <input class="radio" type="radio" checked name="radio-direct" value={index} />
+        <input class="radio" type="radio" name={`radio-${qIndex}`} value={aIndex} />
         <p>{answer}</p>
       </label>
     {/each}
