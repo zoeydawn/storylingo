@@ -59,7 +59,7 @@
   <!--   </button> -->
   <!-- </footer> -->
 
-  <Quiz {storyQuestions} />
+  <Quiz questions={storyQuestions} />
 </div>
 
 <style>
