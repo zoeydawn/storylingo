@@ -4,8 +4,7 @@
   import StoryDisplay from '$lib/components/StoryDisplay.svelte'
   import TargetDropdown from '$lib/components/TargetDropdown.svelte'
   import { languageSettings } from '$lib/stores/languageSettings'
-
-  // TODO: integrate i18n in this page
+  import { _ } from 'svelte-i18n'
 
   const storyTopics = [
     'A day in the life of a butterfly',
