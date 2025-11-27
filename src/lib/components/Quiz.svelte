@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { Question } from '$lib'
+  import { _ } from 'svelte-i18n'
 
   export let questions: Question[]
 
@@ -33,7 +34,7 @@
 </script>
 
 <div class="card preset-filled-surface-100-900 mt-7 w-full p-4 text-center">
-  <h6 class="h4">Quiz</h6>
+  <h6 class="h4">{$_('quiz.header')}</h6>
 
   {#each questions as question, qIndex (qIndex)}
     <h6 class="h6 mt-4">{question.question}</h6>
@@ -77,7 +78,7 @@
   <div class="mt-4 flex justify-center gap-4">
     {#if isSubmitted && !perfectScore}
       <button type="button" class="btn preset-outlined-surface-500" on:click={resetQuiz}>
-        Clear
+        {$_('quiz.clear')}
       </button>
     {/if}
 
@@ -88,7 +89,7 @@
         on:click={handleSubmit}
         disabled={!isSubmitted && selectedAnswers.includes(-1)}
       >
-        Submit
+        {$_('quiz.submit')}
       </button>
     {/if}
   </div>

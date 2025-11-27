@@ -33,5 +33,10 @@
   },
   "navigation": {
     "generateStory": "Generate Micro-Story"
+  },
+  "quiz": {
+    "submit": "Submit",
+    "header": "Quiz",
+    "clear": "Clear"
   }
 }
