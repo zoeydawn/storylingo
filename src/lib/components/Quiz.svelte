@@ -56,10 +56,9 @@
             aIndex !== question.correctAnswer}
         >
           {answer}
-          {isSubmitted &&
-            submittedAnswers[qIndex] === question.correctAnswer &&
-            aIndex === question.correctAnswer &&
-            ' ✓'}
+          {#if isSubmitted && submittedAnswers[qIndex] === question.correctAnswer && aIndex === question.correctAnswer}
+            ✓
+          {/if}
         </p>
       </label>
     {/each}
