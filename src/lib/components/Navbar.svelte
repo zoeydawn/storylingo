@@ -10,7 +10,7 @@
       <button type="button" class="btn-icon btn-icon-lg hover:preset-tonal"><MenuIcon /></button>
     </AppBar.Lead>
     <AppBar.Headline>
-      <p class="text-2xl">StoryLingo</p>
+      <a href="/" class="text-2xl hover:text-primary-500">StoryLingo</a>
     </AppBar.Headline>
     <AppBar.Trail>
       <LanguageSelector />
