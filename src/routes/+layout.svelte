@@ -1,8 +1,14 @@
 <script lang="ts">
   import '../app.css'
-  import '$lib/i18n.ts' // Initialize i18n
+  import '$lib/i18n' // Initialize i18n
   import Navbar from '$lib/components/Navbar.svelte'
+  import { page } from '$app/stores'
+  import { locale } from 'svelte-i18n'
+  
   let { children } = $props()
+  
+  // Set language from page data
+  $: $page.data?.lang && locale.set($page.data.lang)
 </script>
 
 <Navbar />
