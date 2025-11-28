@@ -33,3 +33,5 @@ export interface Question {
   answers: string[]
   correctAnswer: number
 }
+
+export const defaultLanguage = 'fr'

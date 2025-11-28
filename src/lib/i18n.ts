@@ -5,6 +5,7 @@ import { browser } from '$app/environment'
 import en from '../locales/en.json'
 import es from '../locales/es.json'
 import fr from '../locales/fr.json'
+import { defaultLanguage } from '$lib'
 
 addMessages('en', en)
 addMessages('en-US', en)
@@ -12,12 +13,12 @@ addMessages('es', es)
 addMessages('fr', fr)
 
 init({
-  fallbackLocale: 'fr',
+  fallbackLocale: defaultLanguage,
   initialLocale: browser
     ? typeof window !== 'undefined'
-      ? window.lang || localStorage.getItem('lang')
+      ? localStorage.getItem('lang') || window.lang
       : undefined
-    : 'fr',
+    : defaultLanguage,
 })
 
 export { locale }

@@ -1,11 +1,9 @@
+import { defaultLanguage } from '$lib'
 import { supabase } from '$lib/supabaseClient'
 import type { Handle } from '@sveltejs/kit'
 import { locale } from 'svelte-i18n'
 
 const supportedLanguages = ['en', 'es', 'fr']
-
-// TODO: move to index.ts
-const defaultLanguage = 'fr'
 
 export const handle: Handle = async ({ event, resolve }) => {
   // supabset auth
