@@ -2,7 +2,7 @@
   import { locale } from 'svelte-i18n'
   import { onMount } from 'svelte'
   import { Languages } from '@lucide/svelte'
-  let currentLang = 'en' // default
+  let currentLang = $locale || 'en' // engligh default
 
   const languages: Record<string, string> = {
     en: 'English',
@@ -28,6 +28,7 @@
 
 <div class="flex">
   <!-- <label>🌐 {$_('language.select')}</label> -->
+  {console.log('locale', $locale)}
 
   <Languages />
   <select
@@ -36,7 +37,7 @@
     on:change={() => changeLanguage(currentLang)}
   >
     {#each Object.keys(languages) as lang (lang)}
-      <option value={lang}>
+      <option value={lang} selected={lang === currentLang}>
         {languages[lang]}
       </option>
     {/each}
