@@ -8,7 +8,6 @@ import fr from '../locales/fr.json'
 import { defaultLanguage } from '$lib'
 
 addMessages('en', en)
-addMessages('en-US', en)
 addMessages('es', es)
 addMessages('fr', fr)
 

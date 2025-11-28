@@ -34,4 +34,4 @@ export interface Question {
   correctAnswer: number
 }
 
-export const defaultLanguage = 'fr'
+export const defaultLanguage = 'en'
