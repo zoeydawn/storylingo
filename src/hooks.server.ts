@@ -16,7 +16,7 @@ export const handle: Handle = async ({ event, resolve }) => {
 
   // Detect language from browser
   let lang = event.request.headers.get('accept-language')?.split(',')[0] || 'fr'
-  
+
   // Validate and set language
   if (!supportedLanguages.includes(lang)) lang = 'fr'
   event.locals.lang = lang

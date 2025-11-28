@@ -1,5 +1,5 @@
 export async function load({ locals }) {
   return {
-    lang: locals.lang
+    lang: locals.lang,
   }
 }
