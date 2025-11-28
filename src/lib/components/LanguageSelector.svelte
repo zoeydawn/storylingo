@@ -2,7 +2,7 @@
   import { locale } from 'svelte-i18n'
   import { onMount } from 'svelte'
   import { Languages } from '@lucide/svelte'
-  
+
   let currentLang = $locale || 'en' // default to English
   const languages: Record<string, string> = {
     en: 'English',

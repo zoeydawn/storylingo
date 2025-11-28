@@ -4,6 +4,9 @@ import { locale } from 'svelte-i18n'
 
 const supportedLanguages = ['en', 'es', 'fr']
 
+// TODO: move to index.ts
+const defaultLanguage = 'fr'
+
 export const handle: Handle = async ({ event, resolve }) => {
   // supabset auth
   event.locals.supabase = supabase
@@ -15,10 +18,12 @@ export const handle: Handle = async ({ event, resolve }) => {
   }
 
   // Detect language from browser
-  let lang = event.request.headers.get('accept-language')?.split(',')[0] || 'fr'
+  const rawLang = event.request.headers.get('accept-language')?.split(',')[0] || defaultLanguage
+
+  let lang = rawLang.slice(0, 2)
 
   // Validate and set language
-  if (!supportedLanguages.includes(lang)) lang = 'fr'
+  if (!supportedLanguages.includes(lang)) lang = defaultLanguage
   event.locals.lang = lang
   locale.set(lang) // Set for server-side rendering
 
@@ -28,6 +33,6 @@ export const handle: Handle = async ({ event, resolve }) => {
         '</head>',
         `<script>window.lang = ${JSON.stringify(lang)};</script>\n</head>`
       )
-    }
+    },
   })
 }

@@ -2,7 +2,7 @@
   import '../app.css'
   import '$lib/i18n' // Initialize i18n
   import Navbar from '$lib/components/Navbar.svelte'
-  
+
   let { children } = $props()
 </script>
 

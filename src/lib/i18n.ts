@@ -13,8 +13,10 @@ addMessages('fr', fr)
 
 init({
   fallbackLocale: 'fr',
-  initialLocale: browser ? 
-    (typeof window !== 'undefined' ? window.lang || localStorage.getItem('lang') : undefined) 
+  initialLocale: browser
+    ? typeof window !== 'undefined'
+      ? window.lang || localStorage.getItem('lang')
+      : undefined
     : 'fr',
 })
 
