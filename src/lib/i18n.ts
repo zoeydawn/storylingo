@@ -13,7 +13,9 @@ addMessages('fr', fr)
 
 init({
   fallbackLocale: 'fr',
-  initialLocale: browser ? undefined : 'fr', // Set by server for SSR
+  initialLocale: browser ? 
+    (typeof window !== 'undefined' ? window.lang || localStorage.getItem('lang') : undefined) 
+    : 'fr',
 })
 
 export { locale }

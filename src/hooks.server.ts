@@ -22,5 +22,12 @@ export const handle: Handle = async ({ event, resolve }) => {
   event.locals.lang = lang
   locale.set(lang) // Set for server-side rendering
 
-  return resolve(event)
+  return resolve(event, {
+    transformPageChunk: ({ html }) => {
+      return html.replace(
+        '</head>',
+        `<script>window.lang = ${JSON.stringify(lang)};</script>\n</head>`
+      )
+    }
+  })
 }
