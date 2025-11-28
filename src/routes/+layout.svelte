@@ -8,7 +8,11 @@
   let { children } = $props()
   
   // Set language from page data
-  $: $page.data?.lang && locale.set($page.data.lang)
+  $effect(() => {
+    if ($page.data?.lang) {
+      locale.set($page.data.lang)
+    }
+  })
 </script>
 
 <Navbar />
