@@ -1,15 +1,7 @@
 <script lang="ts">
-  import { resolve } from '$app/paths'
   import { XIcon } from '@lucide/svelte'
   import { Dialog, Portal } from '@skeletonlabs/skeleton-svelte'
   import { BookIcon, MenuIcon, HouseIcon, SettingsIcon, UserIcon } from '@lucide/svelte'
-
-  const menueLinks = [
-    { label: 'Home', href: '/', icon: HouseIcon },
-    { label: 'Micro-stories', href: '/story', icon: BookIcon },
-    { label: 'Account', href: '/', icon: UserIcon },
-    { label: 'Settings', href: '/', icon: SettingsIcon },
-  ]
 
   let anchorSidebar = 'btn hover:preset-tonal justify-start px-2 w-full'
 
