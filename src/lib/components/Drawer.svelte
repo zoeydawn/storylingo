@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { resolve } from '$app/paths'
   import { XIcon } from '@lucide/svelte'
   import { Dialog, Portal } from '@skeletonlabs/skeleton-svelte'
   import { BookIcon, MenuIcon, HouseIcon, SettingsIcon, UserIcon } from '@lucide/svelte'
@@ -31,22 +32,22 @@
 
         <ul class="space-y-2">
           <li>
-            <a href="/" class={anchorSidebar}>
+            <a href={resolve('/')} class={anchorSidebar}>
               <HouseIcon class="size-4" />Home
             </a>
           </li>
           <li>
-            <a href="/story" class={anchorSidebar}>
+            <a href={resolve('/story')} class={anchorSidebar}>
               <BookIcon class="size-4" />Micro-stories
             </a>
           </li>
           <li>
-            <a href="/account" class={anchorSidebar}>
+            <a href={resolve('/')} class={anchorSidebar}>
               <UserIcon class="size-4" />Account
             </a>
           </li>
           <li>
-            <a href="/settings" class={anchorSidebar}>
+            <a href={resolve('/')} class={anchorSidebar}>
               <SettingsIcon class="size-4" />Settings
             </a>
           </li>
