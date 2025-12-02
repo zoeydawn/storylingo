@@ -1,7 +1,17 @@
 <script lang="ts">
+  import { resolve } from '$app/paths'
   import { XIcon } from '@lucide/svelte'
   import { Dialog, Portal } from '@skeletonlabs/skeleton-svelte'
-  import { MenuIcon } from '@lucide/svelte'
+  import { BookIcon, MenuIcon, HouseIcon, SettingsIcon, UserIcon } from '@lucide/svelte'
+
+  const menueLinks = [
+    { label: 'Home', href: '/', icon: HouseIcon },
+    { label: 'Micro-stories', href: '/story', icon: BookIcon },
+    { label: 'Account', href: '/', icon: UserIcon },
+    { label: 'Settings', href: '/', icon: SettingsIcon },
+  ]
+
+  let anchorSidebar = 'btn hover:preset-tonal justify-start px-2 w-full'
 
   // Animations:
   const animBackdrop =
@@ -26,7 +36,17 @@
             <XIcon />
           </Dialog.CloseTrigger>
         </header>
-        <p>A slide out drawer panel.</p>
+
+        <ul class="space-y-2">
+          {#each menueLinks as link (link)}
+            {@const Icon = link.icon}
+            <li>
+              <a href={resolve(link.href)} class={anchorSidebar}
+                ><Icon class="size-4" />{link.label}</a
+              >
+            </li>
+          {/each}
+        </ul>
       </Dialog.Content>
     </Dialog.Positioner>
   </Portal>
