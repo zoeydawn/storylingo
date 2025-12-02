@@ -52,7 +52,8 @@
     storyContent = ''
 
     try {
-      const language: LanguageString = languagesByCode[$languageSettings.targetLanguage]
+      const language: LanguageString =
+        languagesByCode[$languageSettings.targetLanguage]
 
       const response = await fetch('/story/generate', {
         method: 'POST',
@@ -88,7 +89,10 @@
   <h2 class="h2 mb-6 text-2xl font-bold">{$_('story.title')}</h2>
   <TargetDropdown />
 
-  <form class="flex w-full flex-col items-center space-y-4 pt-1.5 pb-6" on:submit={generateStory}>
+  <form
+    class="flex w-full flex-col items-center space-y-4 pt-1.5 pb-6"
+    on:submit={generateStory}
+  >
     <fieldset class="align-center flex w-full max-w-md space-y-2">
       <label class="label">
         <span class="label-text">{$_('story.topicLabel')}</span>
@@ -103,7 +107,9 @@
       <button
         type="button"
         class="preset-outlined-secondary btn justify-center"
-        on:click={() => (storyTopic = storyTopics[Math.floor(Math.random() * storyTopics.length)])}
+        on:click={() =>
+          (storyTopic =
+            storyTopics[Math.floor(Math.random() * storyTopics.length)])}
         disabled={isLoading}
       >
         <RefreshCw class="" />
@@ -123,7 +129,9 @@
     </button>
 
     {#if error}
-      <div class="mt-6 max-w-md rounded-lg border border-red-300 bg-red-100 p-4 text-red-800">
+      <div
+        class="mt-6 max-w-md rounded-lg border border-red-300 bg-red-100 p-4 text-red-800"
+      >
         {$_('story.errorMessage')}
       </div>
     {/if}

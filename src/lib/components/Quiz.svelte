@@ -77,7 +77,11 @@
 
   <div class="mt-4 flex justify-center gap-4">
     {#if isSubmitted && !perfectScore}
-      <button type="button" class="btn preset-outlined-surface-500" on:click={resetQuiz}>
+      <button
+        type="button"
+        class="btn preset-outlined-surface-500"
+        on:click={resetQuiz}
+      >
         {$_('quiz.clear')}
       </button>
     {/if}

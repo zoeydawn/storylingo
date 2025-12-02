@@ -157,7 +157,10 @@ class xe {
   }
   #g() {
     var e = this.#t
-    return (this.#r && ((this.#u = w()), this.#t.before(this.#u), (e = this.#u)), e)
+    return (
+      this.#r && ((this.#u = w()), this.#t.before(this.#u), (e = this.#u)),
+      e
+    )
   }
   is_pending() {
     return this.#r || (!!this.parent && this.parent.is_pending())
@@ -263,7 +266,11 @@ class xe {
   }
 }
 function qe(t) {
-  return t.endsWith('capture') && t !== 'gotpointercapture' && t !== 'lostpointercapture'
+  return (
+    t.endsWith('capture') &&
+    t !== 'gotpointercapture' &&
+    t !== 'lostpointercapture'
+  )
 }
 const Ce = [
   'beforeinput',
@@ -322,7 +329,8 @@ const X = new Set(),
   I = new Set()
 function We(t, e, r, a = {}) {
   function s(n) {
-    if ((a.capture || T.call(e, n), !n.cancelBubble)) return _e(() => r?.call(this, n))
+    if ((a.capture || T.call(e, n), !n.cancelBubble))
+      return _e(() => r?.call(this, n))
   }
   return (
     t.startsWith('pointer') || t.startsWith('touch') || t === 'wheel'
@@ -336,7 +344,10 @@ function We(t, e, r, a = {}) {
 function Xe(t, e, r, a, s) {
   var n = { capture: a, passive: s },
     i = We(t, e, r, n)
-  ;(e === document.body || e === window || e === document || e instanceof HTMLMediaElement) &&
+  ;(e === document.body ||
+    e === window ||
+    e === document ||
+    e instanceof HTMLMediaElement) &&
     de(() => {
       e.removeEventListener(t, i, n)
     })
@@ -511,7 +522,10 @@ function st(t, e) {
   }
 }
 const y = new Map()
-function K(t, { target: e, anchor: r, props: a = {}, events: s, context: n, intro: i = !0 }) {
+function K(
+  t,
+  { target: e, anchor: r, props: a = {}, events: s, context: n, intro: i = !0 }
+) {
   x()
   var c = new Set(),
     o = (_) => {
@@ -545,7 +559,9 @@ function K(t, { target: e, anchor: r, props: a = {}, events: s, context: n, intr
             (P = i),
             (g = t(u, a) || {}),
             (P = !0),
-            h && ((v.nodes_end = f), f === null || f.nodeType !== W || f.data !== Se))
+            h &&
+              ((v.nodes_end = f),
+              f === null || f.nodeType !== W || f.data !== Se))
           )
             throw (Le(), C)
           n && Me()
@@ -554,7 +570,9 @@ function K(t, { target: e, anchor: r, props: a = {}, events: s, context: n, intr
           for (var u of c) {
             e.removeEventListener(u, T)
             var l = y.get(u)
-            --l === 0 ? (document.removeEventListener(u, T), y.delete(u)) : y.set(u, l)
+            --l === 0
+              ? (document.removeEventListener(u, T), y.delete(u))
+              : y.set(u, l)
           }
           ;(I.delete(o), _ !== r && _.parentNode?.removeChild(_))
         }

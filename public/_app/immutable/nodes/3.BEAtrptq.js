@@ -1,4 +1,11 @@
-import { c as R, a as p, f as M, s as O, e as E, t as te } from '../chunks/7vpOr-8R.js'
+import {
+  c as R,
+  a as p,
+  f as M,
+  s as O,
+  e as E,
+  t as te,
+} from '../chunks/7vpOr-8R.js'
 import { i as Y } from '../chunks/CN82yqVR.js'
 import {
   ad as pe,
@@ -22,7 +29,14 @@ import {
   P as q,
   R as S,
 } from '../chunks/ZIxVAD3j.js'
-import { s as B, r as F, p as ae, a as le, b as U, i as G } from '../chunks/DpJNoy2a.js'
+import {
+  s as B,
+  r as F,
+  p as ae,
+  a as le,
+  b as U,
+  i as G,
+} from '../chunks/DpJNoy2a.js'
 import {
   I as H,
   s as J,
@@ -33,12 +47,25 @@ import {
   $ as Te,
   r as Le,
 } from '../chunks/DRn3GchK.js'
-import { l as Se, a as Me, b as ne, s as Ce, c as ke, d as Ae } from '../chunks/BD9XyX4O.js'
+import {
+  l as Se,
+  a as Me,
+  b as ne,
+  s as Ce,
+  c as ke,
+  d as Ae,
+} from '../chunks/BD9XyX4O.js'
 function je(e, t, s = t) {
   var f = new WeakSet()
   ;(pe(e, 'input', async (l) => {
     var o = l ? e.defaultValue : e.value
-    if (((o = K(e) ? Q(o) : o), s(o), D !== null && f.add(D), await ye(), o !== (o = t()))) {
+    if (
+      ((o = K(e) ? Q(o) : o),
+      s(o),
+      D !== null && f.add(D),
+      await ye(),
+      o !== (o = t()))
+    ) {
       var a = e.selectionStart,
         n = e.selectionEnd,
         $ = e.value.length
@@ -298,9 +325,11 @@ function Be(e, t) {
     c($),
     k(() => {
       ;(w !== (w = s().targetLanguage) &&
-        ((r.value = (r.__value = s().targetLanguage) ?? ''), se(r, s().targetLanguage)),
+        ((r.value = (r.__value = s().targetLanguage) ?? ''),
+        se(r, s().targetLanguage)),
         T !== (T = s().targetLevel) &&
-          ((m.value = (m.__value = s().targetLevel) ?? ''), se(m, s().targetLevel)))
+          ((m.value = (m.__value = s().targetLevel) ?? ''),
+          se(m, s().targetLevel)))
     }),
     E('change', r, a),
     E('change', m, n),

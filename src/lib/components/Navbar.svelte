@@ -11,7 +11,9 @@
       <Drawer />
     </AppBar.Lead>
     <AppBar.Headline>
-      <a href={resolve('/')} class="hover:text-primary-500 text-2xl">StoryLingo</a>
+      <a href={resolve('/')} class="hover:text-primary-500 text-2xl"
+        >StoryLingo</a
+      >
     </AppBar.Headline>
     <AppBar.Trail>
       <LanguageSelector />

@@ -16,7 +16,9 @@ export const handle: Handle = async ({ event, resolve }) => {
   }
 
   // Detect language from browser
-  const rawLang = event.request.headers.get('accept-language')?.split(',')[0] || defaultLanguage
+  const rawLang =
+    event.request.headers.get('accept-language')?.split(',')[0] ||
+    defaultLanguage
 
   let lang = rawLang.slice(0, 2)
 

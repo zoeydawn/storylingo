@@ -85,7 +85,8 @@ function tn(e, t) {
   return t
 }
 function rn(e, t, r) {
-  for (var n = e.items, i = [], a = t.length, s = 0; s < a; s++) gr(t[s].e, i, !0)
+  for (var n = e.items, i = [], a = t.length, s = 0; s < a; s++)
+    gr(t[s].e, i, !0)
   var o = a > 0 && i.length === 0 && r !== null
   if (o) {
     var c = r.parentNode
@@ -207,7 +208,8 @@ function an(e, t, r, n, i, a, s, o, c) {
     }
     if (
       (u && Ot(v, T, d, s),
-      (v.e.f & Ae) !== 0 && (Tt(v.e), l && (v.a?.unfix(), (f ??= new Set()).delete(v))),
+      (v.e.f & Ae) !== 0 &&
+        (Tt(v.e), l && (v.a?.unfix(), (f ??= new Set()).delete(v))),
       v !== b)
     ) {
       if (E !== void 0 && E.has(v)) {
@@ -237,7 +239,9 @@ function an(e, t, r, n, i, a, s, o, c) {
         continue
       }
       for (p = [], g = []; b !== null && b.k !== x; )
-        ((b.e.f & Ae) === 0 && (E ??= new Set()).add(b), g.push(b), (b = b.next))
+        ((b.e.f & Ae) === 0 && (E ??= new Set()).add(b),
+          g.push(b),
+          (b = b.next))
       if (b === null) continue
       v = b
     }
@@ -292,7 +296,9 @@ function De(e, t, r, n, i, a, s, o, c, l, u) {
 }
 function Se(e, t, r) {
   for (
-    var n = e.next ? e.next.e.nodes_start : r, i = t ? t.e.nodes_start : r, a = e.e.nodes_start;
+    var n = e.next ? e.next.e.nodes_start : r,
+      i = t ? t.e.nodes_start : r,
+      a = e.e.nodes_start;
     a !== null && a !== n;
 
   ) {
@@ -368,7 +374,8 @@ function It(e) {
   else if (typeof e == 'object')
     if (Array.isArray(e)) {
       var i = e.length
-      for (t = 0; t < i; t++) e[t] && (r = It(e[t])) && (n && (n += ' '), (n += r))
+      for (t = 0; t < i; t++)
+        e[t] && (r = It(e[t])) && (n && (n += ' '), (n += r))
     } else for (r in e) e[r] && (n && (n += ' '), (n += r))
   return n
 }
@@ -392,7 +399,8 @@ function fn(e, t, r) {
       else if (n.length)
         for (var a = i.length, s = 0; (s = n.indexOf(i, s)) >= 0; ) {
           var o = s + a
-          ;(s === 0 || tt.includes(n[s - 1])) && (o === n.length || tt.includes(n[o]))
+          ;(s === 0 || tt.includes(n[s - 1])) &&
+          (o === n.length || tt.includes(n[o]))
             ? (n = (s === 0 ? '' : n.substring(0, s)) + n.substring(o + 1))
             : (s = o)
         }
@@ -424,7 +432,8 @@ function cn(e, t) {
         s = 0,
         o = !1,
         c = []
-      ;(n && c.push(...Object.keys(n).map(Be)), i && c.push(...Object.keys(i).map(Be)))
+      ;(n && c.push(...Object.keys(n).map(Be)),
+        i && c.push(...Object.keys(i).map(Be)))
       var l = 0,
         u = -1
       const E = e.length
@@ -459,7 +468,12 @@ function cn(e, t) {
         }
       }
     }
-    return (n && (r += rt(n)), i && (r += rt(i, !0)), (r = r.trim()), r === '' ? null : r)
+    return (
+      n && (r += rt(n)),
+      i && (r += rt(i, !0)),
+      (r = r.trim()),
+      r === '' ? null : r
+    )
   }
   return e == null ? null : String(e)
 }
@@ -468,7 +482,11 @@ function mn(e, t, r, n, i, a) {
   if (O || s !== r || s === void 0) {
     var o = fn(r, n, a)
     ;((!O || o !== e.getAttribute('class')) &&
-      (o == null ? e.removeAttribute('class') : t ? (e.className = o) : e.setAttribute('class', o)),
+      (o == null
+        ? e.removeAttribute('class')
+        : t
+          ? (e.className = o)
+          : e.setAttribute('class', o)),
       (e.__className = r))
   } else if (a && i !== a)
     for (var c in a) {
@@ -480,7 +498,8 @@ function mn(e, t, r, n, i, a) {
 function Ne(e, t = {}, r, n) {
   for (var i in r) {
     var a = r[i]
-    t[i] !== a && (r[i] == null ? e.style.removeProperty(i) : e.style.setProperty(i, a, n))
+    t[i] !== a &&
+      (r[i] == null ? e.style.removeProperty(i) : e.style.setProperty(i, a, n))
   }
 }
 function vn(e, t, r, n) {
@@ -491,7 +510,10 @@ function vn(e, t, r, n) {
       (a == null ? e.removeAttribute('style') : (e.style.cssText = a)),
       (e.__style = t))
   } else
-    n && (Array.isArray(n) ? (Ne(e, r?.[0], n[0]), Ne(e, r?.[1], n[1], 'important')) : Ne(e, r, n))
+    n &&
+      (Array.isArray(n)
+        ? (Ne(e, r?.[0], n[0]), Ne(e, r?.[1], n[1], 'important'))
+        : Ne(e, r, n))
   return n
 }
 function me(e, t, r = !1) {
@@ -577,13 +599,17 @@ function pn(e) {
   }
 }
 function bn(e, t) {
-  t ? e.hasAttribute('selected') || e.setAttribute('selected', '') : e.removeAttribute('selected')
+  t
+    ? e.hasAttribute('selected') || e.setAttribute('selected', '')
+    : e.removeAttribute('selected')
 }
 function ve(e, t, r, n) {
   var i = wt(e)
   ;(O &&
     ((i[t] = e.getAttribute(t)),
-    t === 'src' || t === 'srcset' || (t === 'href' && e.nodeName === 'LINK'))) ||
+    t === 'src' ||
+      t === 'srcset' ||
+      (t === 'href' && e.nodeName === 'LINK'))) ||
     (i[t] !== (i[t] = r) &&
       (t === 'loading' && (e[wr] = r),
       r == null
@@ -606,7 +632,8 @@ function dn(e, t, r, n, i = !1, a = !1) {
   var h = t || {},
     y = e.tagName === 'OPTION'
   for (var b in t) b in r || (r[b] = null)
-  ;(r.class ? (r.class = ln(r.class)) : r[Q] && (r.class = null), r[Y] && (r.style ??= null))
+  ;(r.class ? (r.class = ln(r.class)) : r[Q] && (r.class = null),
+    r[Y] && (r.style ??= null))
   var E = Ct(e)
   for (const v in r) {
     let d = r[v]
@@ -648,7 +675,8 @@ function dn(e, t, r, n, i = !1, a = !1) {
           else g && (e[`__${I}`] = void 0)
         } else if (v === 'style') ve(e, v, d)
         else if (v === 'autofocus') Or(e, !!d)
-        else if (!l && (v === '__value' || (v === 'value' && d != null))) e.value = e.__value = d
+        else if (!l && (v === '__value' || (v === 'value' && d != null)))
+          e.value = e.__value = d
         else if (v === 'selected' && y) bn(e, d)
         else {
           var T = v
@@ -660,10 +688,14 @@ function dn(e, t, r, n, i = !1, a = !1) {
               const L = t === void 0
               if (T === 'value') {
                 let I = B.defaultValue
-                ;(B.removeAttribute(T), (B.defaultValue = I), (B.value = B.__value = L ? I : null))
+                ;(B.removeAttribute(T),
+                  (B.defaultValue = I),
+                  (B.value = B.__value = L ? I : null))
               } else {
                 let I = B.defaultChecked
-                ;(B.removeAttribute(T), (B.defaultChecked = I), (B.checked = L ? I : !1))
+                ;(B.removeAttribute(T),
+                  (B.defaultChecked = I),
+                  (B.checked = L ? I : !1))
               }
             } else e.removeAttribute(v)
           else
@@ -726,7 +758,9 @@ function Ct(e) {
   return r
 }
 function gn(e) {
-  return e && e.__esModule && Object.prototype.hasOwnProperty.call(e, 'default') ? e.default : e
+  return e && e.__esModule && Object.prototype.hasOwnProperty.call(e, 'default')
+    ? e.default
+    : e
 }
 var Oe, at
 function En() {
@@ -781,7 +815,13 @@ function En() {
     }
   }
   function y(f, p) {
-    return h(f, p) && !(Object.hasOwnProperty.call(f, p) && Object.propertyIsEnumerable.call(f, p))
+    return (
+      h(f, p) &&
+      !(
+        Object.hasOwnProperty.call(f, p) &&
+        Object.propertyIsEnumerable.call(f, p)
+      )
+    )
   }
   function b(f, p, g) {
     var T = {}
@@ -829,19 +869,23 @@ var Ue = function (e, t) {
           r.__proto__ = n
         }) ||
       function (r, n) {
-        for (var i in n) Object.prototype.hasOwnProperty.call(n, i) && (r[i] = n[i])
+        for (var i in n)
+          Object.prototype.hasOwnProperty.call(n, i) && (r[i] = n[i])
       }),
     Ue(e, t)
   )
 }
 function _e(e, t) {
   if (typeof t != 'function' && t !== null)
-    throw new TypeError('Class extends value ' + String(t) + ' is not a constructor or null')
+    throw new TypeError(
+      'Class extends value ' + String(t) + ' is not a constructor or null'
+    )
   Ue(e, t)
   function r() {
     this.constructor = e
   }
-  e.prototype = t === null ? Object.create(t) : ((r.prototype = t.prototype), new r())
+  e.prototype =
+    t === null ? Object.create(t) : ((r.prototype = t.prototype), new r())
 }
 var S = function () {
   return (
@@ -850,7 +894,8 @@ var S = function () {
       function (t) {
         for (var r, n = 1, i = arguments.length; n < i; n++) {
           r = arguments[n]
-          for (var a in r) Object.prototype.hasOwnProperty.call(r, a) && (t[a] = r[a])
+          for (var a in r)
+            Object.prototype.hasOwnProperty.call(r, a) && (t[a] = r[a])
         }
         return t
       }),
@@ -859,7 +904,10 @@ var S = function () {
 }
 function yn(e, t) {
   var r = {}
-  for (var n in e) Object.prototype.hasOwnProperty.call(e, n) && t.indexOf(n) < 0 && (r[n] = e[n])
+  for (var n in e)
+    Object.prototype.hasOwnProperty.call(e, n) &&
+      t.indexOf(n) < 0 &&
+      (r[n] = e[n])
   if (e != null && typeof Object.getOwnPropertySymbols == 'function')
     for (var i = 0, n = Object.getOwnPropertySymbols(e); i < n.length; i++)
       t.indexOf(n[i]) < 0 &&
@@ -870,7 +918,8 @@ function yn(e, t) {
 function Ie(e, t, r) {
   if (r || arguments.length === 2)
     for (var n = 0, i = t.length, a; n < i; n++)
-      (a || !(n in t)) && (a || (a = Array.prototype.slice.call(t, 0, n)), (a[n] = t[n]))
+      (a || !(n in t)) &&
+        (a || (a = Array.prototype.slice.call(t, 0, n)), (a[n] = t[n]))
   return e.concat(a || Array.prototype.slice.call(t))
 }
 function Pe(e, t) {
@@ -928,7 +977,8 @@ var Bn = function () {
   Le = { variadic: Sn },
   H
 ;(function (e) {
-  ;((e[(e.EXPECT_ARGUMENT_CLOSING_BRACE = 1)] = 'EXPECT_ARGUMENT_CLOSING_BRACE'),
+  ;((e[(e.EXPECT_ARGUMENT_CLOSING_BRACE = 1)] =
+    'EXPECT_ARGUMENT_CLOSING_BRACE'),
     (e[(e.EMPTY_ARGUMENT = 2)] = 'EMPTY_ARGUMENT'),
     (e[(e.MALFORMED_ARGUMENT = 3)] = 'MALFORMED_ARGUMENT'),
     (e[(e.EXPECT_ARGUMENT_TYPE = 4)] = 'EXPECT_ARGUMENT_TYPE'),
@@ -938,19 +988,28 @@ var Bn = function () {
     (e[(e.INVALID_DATE_TIME_SKELETON = 8)] = 'INVALID_DATE_TIME_SKELETON'),
     (e[(e.EXPECT_NUMBER_SKELETON = 9)] = 'EXPECT_NUMBER_SKELETON'),
     (e[(e.EXPECT_DATE_TIME_SKELETON = 10)] = 'EXPECT_DATE_TIME_SKELETON'),
-    (e[(e.UNCLOSED_QUOTE_IN_ARGUMENT_STYLE = 11)] = 'UNCLOSED_QUOTE_IN_ARGUMENT_STYLE'),
-    (e[(e.EXPECT_SELECT_ARGUMENT_OPTIONS = 12)] = 'EXPECT_SELECT_ARGUMENT_OPTIONS'),
-    (e[(e.EXPECT_PLURAL_ARGUMENT_OFFSET_VALUE = 13)] = 'EXPECT_PLURAL_ARGUMENT_OFFSET_VALUE'),
-    (e[(e.INVALID_PLURAL_ARGUMENT_OFFSET_VALUE = 14)] = 'INVALID_PLURAL_ARGUMENT_OFFSET_VALUE'),
-    (e[(e.EXPECT_SELECT_ARGUMENT_SELECTOR = 15)] = 'EXPECT_SELECT_ARGUMENT_SELECTOR'),
-    (e[(e.EXPECT_PLURAL_ARGUMENT_SELECTOR = 16)] = 'EXPECT_PLURAL_ARGUMENT_SELECTOR'),
+    (e[(e.UNCLOSED_QUOTE_IN_ARGUMENT_STYLE = 11)] =
+      'UNCLOSED_QUOTE_IN_ARGUMENT_STYLE'),
+    (e[(e.EXPECT_SELECT_ARGUMENT_OPTIONS = 12)] =
+      'EXPECT_SELECT_ARGUMENT_OPTIONS'),
+    (e[(e.EXPECT_PLURAL_ARGUMENT_OFFSET_VALUE = 13)] =
+      'EXPECT_PLURAL_ARGUMENT_OFFSET_VALUE'),
+    (e[(e.INVALID_PLURAL_ARGUMENT_OFFSET_VALUE = 14)] =
+      'INVALID_PLURAL_ARGUMENT_OFFSET_VALUE'),
+    (e[(e.EXPECT_SELECT_ARGUMENT_SELECTOR = 15)] =
+      'EXPECT_SELECT_ARGUMENT_SELECTOR'),
+    (e[(e.EXPECT_PLURAL_ARGUMENT_SELECTOR = 16)] =
+      'EXPECT_PLURAL_ARGUMENT_SELECTOR'),
     (e[(e.EXPECT_SELECT_ARGUMENT_SELECTOR_FRAGMENT = 17)] =
       'EXPECT_SELECT_ARGUMENT_SELECTOR_FRAGMENT'),
     (e[(e.EXPECT_PLURAL_ARGUMENT_SELECTOR_FRAGMENT = 18)] =
       'EXPECT_PLURAL_ARGUMENT_SELECTOR_FRAGMENT'),
-    (e[(e.INVALID_PLURAL_ARGUMENT_SELECTOR = 19)] = 'INVALID_PLURAL_ARGUMENT_SELECTOR'),
-    (e[(e.DUPLICATE_PLURAL_ARGUMENT_SELECTOR = 20)] = 'DUPLICATE_PLURAL_ARGUMENT_SELECTOR'),
-    (e[(e.DUPLICATE_SELECT_ARGUMENT_SELECTOR = 21)] = 'DUPLICATE_SELECT_ARGUMENT_SELECTOR'),
+    (e[(e.INVALID_PLURAL_ARGUMENT_SELECTOR = 19)] =
+      'INVALID_PLURAL_ARGUMENT_SELECTOR'),
+    (e[(e.DUPLICATE_PLURAL_ARGUMENT_SELECTOR = 20)] =
+      'DUPLICATE_PLURAL_ARGUMENT_SELECTOR'),
+    (e[(e.DUPLICATE_SELECT_ARGUMENT_SELECTOR = 21)] =
+      'DUPLICATE_SELECT_ARGUMENT_SELECTOR'),
     (e[(e.MISSING_OTHER_CLAUSE = 22)] = 'MISSING_OTHER_CLAUSE'),
     (e[(e.INVALID_TAG = 23)] = 'INVALID_TAG'),
     (e[(e.INVALID_TAG_NAME = 25)] = 'INVALID_TAG_NAME'),
@@ -1025,7 +1084,9 @@ function Mn(e) {
         case 'u':
         case 'U':
         case 'r':
-          throw new RangeError('`Y/u/U/r` (year) patterns are not supported, use `y` instead')
+          throw new RangeError(
+            '`Y/u/U/r` (year) patterns are not supported, use `y` instead'
+          )
         case 'q':
         case 'Q':
           throw new RangeError('`q/Q` (quarter) patterns are not supported')
@@ -1042,16 +1103,24 @@ function Mn(e) {
         case 'D':
         case 'F':
         case 'g':
-          throw new RangeError('`D/F/g` (day) patterns are not supported, use `d` instead')
+          throw new RangeError(
+            '`D/F/g` (day) patterns are not supported, use `d` instead'
+          )
         case 'E':
           t.weekday = n === 4 ? 'long' : n === 5 ? 'narrow' : 'short'
           break
         case 'e':
-          if (n < 4) throw new RangeError('`e..eee` (weekday) patterns are not supported')
+          if (n < 4)
+            throw new RangeError(
+              '`e..eee` (weekday) patterns are not supported'
+            )
           t.weekday = ['short', 'long', 'narrow', 'short'][n - 4]
           break
         case 'c':
-          if (n < 4) throw new RangeError('`c..ccc` (weekday) patterns are not supported')
+          if (n < 4)
+            throw new RangeError(
+              '`c..ccc` (weekday) patterns are not supported'
+            )
           t.weekday = ['short', 'long', 'narrow', 'short'][n - 4]
           break
         case 'a':
@@ -1059,7 +1128,9 @@ function Mn(e) {
           break
         case 'b':
         case 'B':
-          throw new RangeError('`b/B` (period) patterns are not supported, use `a` instead')
+          throw new RangeError(
+            '`b/B` (period) patterns are not supported, use `a` instead'
+          )
         case 'h':
           ;((t.hourCycle = 'h12'), (t.hour = ['numeric', '2-digit'][n - 1]))
           break
@@ -1075,7 +1146,9 @@ function Mn(e) {
         case 'j':
         case 'J':
         case 'C':
-          throw new RangeError('`j/J/C` (hour) patterns are not supported, use `h/H/K/k` instead')
+          throw new RangeError(
+            '`j/J/C` (hour) patterns are not supported, use `h/H/K/k` instead'
+          )
         case 'm':
           t.minute = ['numeric', '2-digit'][n - 1]
           break
@@ -1084,7 +1157,9 @@ function Mn(e) {
           break
         case 'S':
         case 'A':
-          throw new RangeError('`S/A` (second) patterns are not supported, use `s` instead')
+          throw new RangeError(
+            '`S/A` (second) patterns are not supported, use `s` instead'
+          )
         case 'z':
           t.timeZoneName = n < 4 ? 'short' : 'long'
           break
@@ -1143,13 +1218,15 @@ function ut(e) {
     e.replace(zt, function (r, n, i) {
       return (
         typeof i != 'string'
-          ? ((t.minimumSignificantDigits = n.length), (t.maximumSignificantDigits = n.length))
+          ? ((t.minimumSignificantDigits = n.length),
+            (t.maximumSignificantDigits = n.length))
           : i === '+'
             ? (t.minimumSignificantDigits = n.length)
             : n[0] === '#'
               ? (t.maximumSignificantDigits = n.length)
               : ((t.minimumSignificantDigits = n.length),
-                (t.maximumSignificantDigits = n.length + (typeof i == 'string' ? i.length : 0))),
+                (t.maximumSignificantDigits =
+                  n.length + (typeof i == 'string' ? i.length : 0))),
         ''
       )
     }),
@@ -1296,12 +1373,20 @@ function Gn(e) {
         continue
       case 'integer-width':
         if (i.options.length > 1)
-          throw new RangeError('integer-width stems only accept a single optional option')
+          throw new RangeError(
+            'integer-width stems only accept a single optional option'
+          )
         i.options[0].replace(Dn, function (c, l, u, m, h, y) {
           if (l) t.minimumIntegerDigits = u.length
           else {
-            if (m && h) throw new Error('We currently do not support maximum integer digits')
-            if (y) throw new Error('We currently do not support exact integer digits')
+            if (m && h)
+              throw new Error(
+                'We currently do not support maximum integer digits'
+              )
+            if (y)
+              throw new Error(
+                'We currently do not support exact integer digits'
+              )
           }
           return ''
         })
@@ -1313,7 +1398,9 @@ function Gn(e) {
     }
     if (ot.test(i.stem)) {
       if (i.options.length > 1)
-        throw new RangeError('Fraction-precision stems only accept a single optional option')
+        throw new RangeError(
+          'Fraction-precision stems only accept a single optional option'
+        )
       i.stem.replace(ot, function (c, l, u, m, h, y) {
         return (
           u === '*'
@@ -1323,7 +1410,8 @@ function Gn(e) {
               : h && y
                 ? ((t.minimumFractionDigits = h.length),
                   (t.maximumFractionDigits = h.length + y.length))
-                : ((t.minimumFractionDigits = l.length), (t.maximumFractionDigits = l.length)),
+                : ((t.minimumFractionDigits = l.length),
+                  (t.maximumFractionDigits = l.length)),
           ''
         )
       })
@@ -1637,7 +1725,13 @@ function Fn(e, t) {
 }
 function jn(e) {
   var t = e.hourCycle
-  if ((t === void 0 && e.hourCycles && e.hourCycles.length && (t = e.hourCycles[0]), t))
+  if (
+    (t === void 0 &&
+      e.hourCycles &&
+      e.hourCycles.length &&
+      (t = e.hourCycles[0]),
+    t)
+  )
     switch (t) {
       case 'h24':
         return 'k'
@@ -1698,11 +1792,15 @@ var lt = Xn
     : function () {
         for (var t = [], r = 0; r < arguments.length; r++) t[r] = arguments[r]
         for (var n = '', i = t.length, a = 0, s; i > a; ) {
-          if (((s = t[a++]), s > 1114111)) throw RangeError(s + ' is not a valid code point')
+          if (((s = t[a++]), s > 1114111))
+            throw RangeError(s + ' is not a valid code point')
           n +=
             s < 65536
               ? String.fromCharCode(s)
-              : String.fromCharCode(((s -= 65536) >> 10) + 55296, (s % 1024) + 56320)
+              : String.fromCharCode(
+                  ((s -= 65536) >> 10) + 55296,
+                  (s % 1024) + 56320
+                )
         }
         return n
       },
@@ -1796,7 +1894,8 @@ var ti = (function () {
           if (a === 125 && t > 0) break
           if (a === 35 && (r === 'plural' || r === 'selectordinal')) {
             var o = this.clonePosition()
-            ;(this.bump(), i.push({ type: N.pound, location: A(o, this.clonePosition()) }))
+            ;(this.bump(),
+              i.push({ type: N.pound, location: A(o, this.clonePosition()) }))
           } else if (a === 60 && !this.ignoreTag && this.peek() === 47) {
             if (n) break
             return this.error(
@@ -1884,7 +1983,9 @@ var ti = (function () {
       return { val: { type: N.literal, value: i, location: c }, err: null }
     }),
     (e.prototype.tryParseLeftAngleBracket = function () {
-      return !this.isEOF() && this.char() === 60 && (this.ignoreTag || !ri(this.peek() || 0))
+      return !this.isEOF() &&
+        this.char() === 60 &&
+        (this.ignoreTag || !ri(this.peek() || 0))
         ? (this.bump(), '<')
         : null
     }),
@@ -1932,13 +2033,23 @@ var ti = (function () {
     (e.prototype.parseArgument = function (t, r) {
       var n = this.clonePosition()
       if ((this.bump(), this.bumpSpace(), this.isEOF()))
-        return this.error(H.EXPECT_ARGUMENT_CLOSING_BRACE, A(n, this.clonePosition()))
+        return this.error(
+          H.EXPECT_ARGUMENT_CLOSING_BRACE,
+          A(n, this.clonePosition())
+        )
       if (this.char() === 125)
-        return (this.bump(), this.error(H.EMPTY_ARGUMENT, A(n, this.clonePosition())))
+        return (
+          this.bump(),
+          this.error(H.EMPTY_ARGUMENT, A(n, this.clonePosition()))
+        )
       var i = this.parseIdentifierIfPossible().value
-      if (!i) return this.error(H.MALFORMED_ARGUMENT, A(n, this.clonePosition()))
+      if (!i)
+        return this.error(H.MALFORMED_ARGUMENT, A(n, this.clonePosition()))
       if ((this.bumpSpace(), this.isEOF()))
-        return this.error(H.EXPECT_ARGUMENT_CLOSING_BRACE, A(n, this.clonePosition()))
+        return this.error(
+          H.EXPECT_ARGUMENT_CLOSING_BRACE,
+          A(n, this.clonePosition())
+        )
       switch (this.char()) {
         case 125:
           return (
@@ -1957,7 +2068,10 @@ var ti = (function () {
             this.bump(),
             this.bumpSpace(),
             this.isEOF()
-              ? this.error(H.EXPECT_ARGUMENT_CLOSING_BRACE, A(n, this.clonePosition()))
+              ? this.error(
+                  H.EXPECT_ARGUMENT_CLOSING_BRACE,
+                  A(n, this.clonePosition())
+                )
               : this.parseArgumentOptions(t, r, i, n)
           )
         default:
@@ -2020,7 +2134,8 @@ var ti = (function () {
                     err: null,
                   }
             } else {
-              if (_.length === 0) return this.error(H.EXPECT_DATE_TIME_SKELETON, E)
+              if (_.length === 0)
+                return this.error(H.EXPECT_DATE_TIME_SKELETON, E)
               var f = _
               this.locale && (f = Fn(_, this.locale))
               var h = {
@@ -2067,7 +2182,9 @@ var ti = (function () {
               H.INVALID_PLURAL_ARGUMENT_OFFSET_VALUE
             )
             if (m.err) return m
-            ;(this.bumpSpace(), (T = this.parseIdentifierIfPossible()), (x = m.val))
+            ;(this.bumpSpace(),
+              (T = this.parseIdentifierIfPossible()),
+              (x = m.val))
           }
           var v = this.tryParsePluralOrSelectOptions(t, o, r, T)
           if (v.err) return v
@@ -2102,7 +2219,10 @@ var ti = (function () {
     }),
     (e.prototype.tryParseArgumentClose = function (t) {
       return this.isEOF() || this.char() !== 125
-        ? this.error(H.EXPECT_ARGUMENT_CLOSING_BRACE, A(t, this.clonePosition()))
+        ? this.error(
+            H.EXPECT_ARGUMENT_CLOSING_BRACE,
+            A(t, this.clonePosition())
+          )
         : (this.bump(), { val: !0, err: null })
     }),
     (e.prototype.parseSimpleArgStyleIfPossible = function () {
@@ -2113,7 +2233,10 @@ var ti = (function () {
             this.bump()
             var i = this.clonePosition()
             if (!this.bumpUntil("'"))
-              return this.error(H.UNCLOSED_QUOTE_IN_ARGUMENT_STYLE, A(i, this.clonePosition()))
+              return this.error(
+                H.UNCLOSED_QUOTE_IN_ARGUMENT_STYLE,
+                A(i, this.clonePosition())
+              )
             this.bump()
             break
           }
@@ -2155,7 +2278,11 @@ var ti = (function () {
       }
     }),
     (e.prototype.tryParsePluralOrSelectOptions = function (t, r, n, i) {
-      for (var a, s = !1, o = [], c = new Set(), l = i.value, u = i.location; ; ) {
+      for (
+        var a, s = !1, o = [], c = new Set(), l = i.value, u = i.location;
+        ;
+
+      ) {
         if (l.length === 0) {
           var m = this.clonePosition()
           if (r !== 'select' && this.bumpIf('=')) {
@@ -2164,7 +2291,8 @@ var ti = (function () {
               H.INVALID_PLURAL_ARGUMENT_SELECTOR
             )
             if (h.err) return h
-            ;((u = A(m, this.clonePosition())), (l = this.message.slice(m.offset, this.offset())))
+            ;((u = A(m, this.clonePosition())),
+              (l = this.message.slice(m.offset, this.offset())))
           } else break
         }
         if (c.has(l))
@@ -2196,11 +2324,16 @@ var ti = (function () {
       }
       return o.length === 0
         ? this.error(
-            r === 'select' ? H.EXPECT_SELECT_ARGUMENT_SELECTOR : H.EXPECT_PLURAL_ARGUMENT_SELECTOR,
+            r === 'select'
+              ? H.EXPECT_SELECT_ARGUMENT_SELECTOR
+              : H.EXPECT_PLURAL_ARGUMENT_SELECTOR,
             A(this.clonePosition(), this.clonePosition())
           )
         : this.requiresOtherClause && !s
-          ? this.error(H.MISSING_OTHER_CLAUSE, A(this.clonePosition(), this.clonePosition()))
+          ? this.error(
+              H.MISSING_OTHER_CLAUSE,
+              A(this.clonePosition(), this.clonePosition())
+            )
           : { val: o, err: null }
     }),
     (e.prototype.tryParseDecimalInteger = function (t, r) {
@@ -2213,7 +2346,9 @@ var ti = (function () {
         else break
       }
       var c = A(i, this.clonePosition())
-      return a ? ((s *= n), Yn(s) ? { val: s, err: null } : this.error(r, c)) : this.error(t, c)
+      return a
+        ? ((s *= n), Yn(s) ? { val: s, err: null } : this.error(r, c))
+        : this.error(t, c)
     }),
     (e.prototype.offset = function () {
       return this.position.offset
@@ -2232,7 +2367,10 @@ var ti = (function () {
       var t = this.position.offset
       if (t >= this.message.length) throw Error('out of bound')
       var r = qt(this.message, t)
-      if (r === void 0) throw Error('Offset '.concat(t, ' is at invalid UTF-16 code unit boundary'))
+      if (r === void 0)
+        throw Error(
+          'Offset '.concat(t, ' is at invalid UTF-16 code unit boundary')
+        )
       return r
     }),
     (e.prototype.error = function (t, r) {
@@ -2242,8 +2380,11 @@ var ti = (function () {
       if (!this.isEOF()) {
         var t = this.char()
         t === 10
-          ? ((this.position.line += 1), (this.position.column = 1), (this.position.offset += 1))
-          : ((this.position.column += 1), (this.position.offset += t < 65536 ? 1 : 2))
+          ? ((this.position.line += 1),
+            (this.position.column = 1),
+            (this.position.offset += 1))
+          : ((this.position.column += 1),
+            (this.position.offset += t < 65536 ? 1 : 2))
       }
     }),
     (e.prototype.bumpIf = function (t) {
@@ -2256,7 +2397,9 @@ var ti = (function () {
     (e.prototype.bumpUntil = function (t) {
       var r = this.offset(),
         n = this.message.indexOf(t, r)
-      return n >= 0 ? (this.bumpTo(n), !0) : (this.bumpTo(this.message.length), !1)
+      return n >= 0
+        ? (this.bumpTo(n), !0)
+        : (this.bumpTo(this.message.length), !1)
     }),
     (e.prototype.bumpTo = function (t) {
       if (this.offset() > t)
@@ -2269,7 +2412,12 @@ var ti = (function () {
         var r = this.offset()
         if (r === t) break
         if (r > t)
-          throw Error('targetOffset '.concat(t, ' is at invalid UTF-16 code unit boundary'))
+          throw Error(
+            'targetOffset '.concat(
+              t,
+              ' is at invalid UTF-16 code unit boundary'
+            )
+          )
         if ((this.bump(), this.isEOF())) break
       }
     }),
@@ -2580,7 +2728,8 @@ function ii(e) {
 function Xe(e) {
   e.forEach(function (t) {
     if ((delete t.location, jt(t) || Vt(t)))
-      for (var r in t.options) (delete t.options[r].location, Xe(t.options[r].value))
+      for (var r in t.options)
+        (delete t.options[r].location, Xe(t.options[r].value))
     else
       (Ut(t) && Xt(t.style)) || ((Gt(t) || Ft(t)) && Ge(t.style))
         ? delete t.style.location
@@ -2588,11 +2737,16 @@ function Xe(e) {
   })
 }
 function ai(e, t) {
-  ;(t === void 0 && (t = {}), (t = S({ shouldParseSkeletons: !0, requiresOtherClause: !0 }, t)))
+  ;(t === void 0 && (t = {}),
+    (t = S({ shouldParseSkeletons: !0, requiresOtherClause: !0 }, t)))
   var r = new ti(e, t).parse()
   if (r.err) {
     var n = SyntaxError(H[r.err.kind])
-    throw ((n.location = r.err.location), (n.originalMessage = r.err.message), n)
+    throw (
+      (n.location = r.err.location),
+      (n.originalMessage = r.err.message),
+      n
+    )
   }
   return (t?.captureLocation || Xe(r.val), r.val)
 }
@@ -2636,8 +2790,12 @@ var xe = (function (e) {
     _e(t, e)
     function t(r, n, i) {
       return (
-        e.call(this, 'Value for "'.concat(r, '" must be of type ').concat(n), k.INVALID_VALUE, i) ||
-        this
+        e.call(
+          this,
+          'Value for "'.concat(r, '" must be of type ').concat(n),
+          k.INVALID_VALUE,
+          i
+        ) || this
       )
     }
     return t
@@ -2668,7 +2826,9 @@ function ui(e) {
     : e.reduce(function (t, r) {
         var n = t[t.length - 1]
         return (
-          !n || n.type !== P.literal || r.type !== P.literal ? t.push(r) : (n.value += r.value),
+          !n || n.type !== P.literal || r.type !== P.literal
+            ? t.push(r)
+            : (n.value += r.value),
           t
         )
       }, [])
@@ -2677,7 +2837,8 @@ function hi(e) {
   return typeof e == 'function'
 }
 function fe(e, t, r, n, i, a, s) {
-  if (e.length === 1 && st(e[0])) return [{ type: P.literal, value: e[0].value }]
+  if (e.length === 1 && st(e[0]))
+    return [{ type: P.literal, value: e[0].value }]
   for (var o = [], c = 0, l = e; c < l.length; c++) {
     var u = l[c]
     if (st(u)) {
@@ -2685,7 +2846,8 @@ function fe(e, t, r, n, i, a, s) {
       continue
     }
     if (Pn(u)) {
-      typeof a == 'number' && o.push({ type: P.literal, value: r.getNumberFormat(t).format(a) })
+      typeof a == 'number' &&
+        o.push({ type: P.literal, value: r.getNumberFormat(t).format(a) })
       continue
     }
     var m = u.value
@@ -2699,7 +2861,11 @@ function fe(e, t, r, n, i, a, s) {
     }
     if (Gt(u)) {
       var y =
-        typeof u.style == 'string' ? n.date[u.style] : Ge(u.style) ? u.style.parsedOptions : void 0
+        typeof u.style == 'string'
+          ? n.date[u.style]
+          : Ge(u.style)
+            ? u.style.parsedOptions
+            : void 0
       o.push({ type: P.literal, value: r.getDateTimeFormat(t, y).format(h) })
       continue
     }
@@ -2763,7 +2929,9 @@ Try polyfilling it using "@formatjs/intl-pluralrules"
             k.MISSING_INTL_API,
             s
           )
-        var T = r.getPluralRules(t, { type: u.pluralType }).select(h - (u.offset || 0))
+        var T = r
+          .getPluralRules(t, { type: u.pluralType })
+          .select(h - (u.offset || 0))
         g = u.options[T] || u.options.other
       }
       if (!g) throw new mt(u.value, h, Object.keys(u.options), s)
@@ -2813,22 +2981,34 @@ function ci(e) {
     {
       getNumberFormat: Pe(
         function () {
-          for (var t, r = [], n = 0; n < arguments.length; n++) r[n] = arguments[n]
-          return new ((t = Intl.NumberFormat).bind.apply(t, Ie([void 0], r, !1)))()
+          for (var t, r = [], n = 0; n < arguments.length; n++)
+            r[n] = arguments[n]
+          return new ((t = Intl.NumberFormat).bind.apply(
+            t,
+            Ie([void 0], r, !1)
+          ))()
         },
         { cache: we(e.number), strategy: Le.variadic }
       ),
       getDateTimeFormat: Pe(
         function () {
-          for (var t, r = [], n = 0; n < arguments.length; n++) r[n] = arguments[n]
-          return new ((t = Intl.DateTimeFormat).bind.apply(t, Ie([void 0], r, !1)))()
+          for (var t, r = [], n = 0; n < arguments.length; n++)
+            r[n] = arguments[n]
+          return new ((t = Intl.DateTimeFormat).bind.apply(
+            t,
+            Ie([void 0], r, !1)
+          ))()
         },
         { cache: we(e.dateTime), strategy: Le.variadic }
       ),
       getPluralRules: Pe(
         function () {
-          for (var t, r = [], n = 0; n < arguments.length; n++) r[n] = arguments[n]
-          return new ((t = Intl.PluralRules).bind.apply(t, Ie([void 0], r, !1)))()
+          for (var t, r = [], n = 0; n < arguments.length; n++)
+            r[n] = arguments[n]
+          return new ((t = Intl.PluralRules).bind.apply(
+            t,
+            Ie([void 0], r, !1)
+          ))()
         },
         { cache: we(e.pluralRules), strategy: Le.variadic }
       ),
@@ -2846,7 +3026,9 @@ var Jt = (function () {
         if (l.length === 1) return l[0].value
         var u = l.reduce(function (m, h) {
           return (
-            !m.length || h.type !== P.literal || typeof m[m.length - 1] != 'string'
+            !m.length ||
+            h.type !== P.literal ||
+            typeof m[m.length - 1] != 'string'
               ? m.push(h.value)
               : (m[m.length - 1] += h.value),
             m
@@ -2855,13 +3037,23 @@ var Jt = (function () {
         return u.length <= 1 ? u[0] || '' : u
       }),
       (this.formatToParts = function (c) {
-        return fe(a.ast, a.locales, a.formatters, a.formats, c, void 0, a.message)
+        return fe(
+          a.ast,
+          a.locales,
+          a.formatters,
+          a.formats,
+          c,
+          void 0,
+          a.message
+        )
       }),
       (this.resolvedOptions = function () {
         var c
         return {
           locale:
-            ((c = a.resolvedLocale) === null || c === void 0 ? void 0 : c.toString()) ||
+            ((c = a.resolvedLocale) === null || c === void 0
+              ? void 0
+              : c.toString()) ||
             Intl.NumberFormat.supportedLocalesOf(a.locales)[0],
         }
       }),
@@ -2891,7 +3083,8 @@ var Jt = (function () {
       get: function () {
         return (
           e.memoizedDefaultLocale ||
-            (e.memoizedDefaultLocale = new Intl.NumberFormat().resolvedOptions().locale),
+            (e.memoizedDefaultLocale =
+              new Intl.NumberFormat().resolvedOptions().locale),
           e.memoizedDefaultLocale
         )
       },
@@ -3025,9 +3218,9 @@ function pe(e) {
       })
 }
 function xi(e, t) {
-  return Promise.all(t.map((n) => (Ei(e, n), n().then((i) => i.default || i)))).then((n) =>
-    gi(e, ...n)
-  )
+  return Promise.all(
+    t.map((n) => (Ei(e, n), n().then((i) => i.default || i)))
+  ).then((n) => gi(e, ...n))
 }
 const J = {}
 function rr(e) {
@@ -3047,7 +3240,8 @@ var vt = Object.getOwnPropertySymbols,
   Hi = (e, t) => {
     var r = {}
     for (var n in e) yi.call(e, n) && t.indexOf(n) < 0 && (r[n] = e[n])
-    if (e != null && vt) for (var n of vt(e)) t.indexOf(n) < 0 && Ti.call(e, n) && (r[n] = e[n])
+    if (e != null && vt)
+      for (var n of vt(e)) t.indexOf(n) < 0 && Ti.call(e, n) && (r[n] = e[n])
     return r
   }
 const Ai = {
@@ -3112,7 +3306,9 @@ function ta(e) {
     try {
       Jt.resolveLocale(e.initialLocale) && (i = e.initialLocale)
     } catch {
-      console.warn(`[svelte-i18n] The initial locale "${e.initialLocale}" is not a valid locale.`)
+      console.warn(
+        `[svelte-i18n] The initial locale "${e.initialLocale}" is not a valid locale.`
+      )
     }
   return (
     n.warnOnMissingMessages &&
@@ -3138,7 +3334,9 @@ var Ni = Object.defineProperty,
   Pi = Object.prototype.hasOwnProperty,
   Li = Object.prototype.propertyIsEnumerable,
   bt = (e, t, r) =>
-    t in e ? Ni(e, t, { enumerable: !0, configurable: !0, writable: !0, value: r }) : (e[t] = r),
+    t in e
+      ? Ni(e, t, { enumerable: !0, configurable: !0, writable: !0, value: r })
+      : (e[t] = r),
   Mi = (e, t) => {
     for (var r in t || (t = {})) Pi.call(t, r) && bt(e, r, t[r])
     if (pt) for (var r of pt(t)) Li.call(t, r) && bt(e, r, t[r])
@@ -3162,7 +3360,9 @@ function U() {
 }
 be.subscribe((e) => {
   ;((We = e ?? void 0),
-    typeof window < 'u' && e != null && document.documentElement.setAttribute('lang', e))
+    typeof window < 'u' &&
+      e != null &&
+      document.documentElement.setAttribute('lang', e))
 })
 const Ci = (e) => {
     if (e && di(e) && pe(e)) {
@@ -3196,7 +3396,9 @@ var Ri = Object.defineProperty,
   nr = Object.prototype.hasOwnProperty,
   ir = Object.prototype.propertyIsEnumerable,
   gt = (e, t, r) =>
-    t in e ? Ri(e, t, { enumerable: !0, configurable: !0, writable: !0, value: r }) : (e[t] = r),
+    t in e
+      ? Ri(e, t, { enumerable: !0, configurable: !0, writable: !0, value: r })
+      : (e[t] = r),
   Qe = (e, t) => {
     for (var r in t || (t = {})) nr.call(t, r) && gt(e, r, t[r])
     if (de) for (var r of de(t)) ir.call(t, r) && gt(e, r, t[r])
@@ -3205,7 +3407,8 @@ var Ri = Object.defineProperty,
   Z = (e, t) => {
     var r = {}
     for (var n in e) nr.call(e, n) && t.indexOf(n) < 0 && (r[n] = e[n])
-    if (e != null && de) for (var n of de(e)) t.indexOf(n) < 0 && ir.call(e, n) && (r[n] = e[n])
+    if (e != null && de)
+      for (var n of de(e)) t.indexOf(n) < 0 && ir.call(e, n) && (r[n] = e[n])
     return r
   }
 const ne = (e, t) => {
@@ -3217,16 +3420,20 @@ const ne = (e, t) => {
     var t = e,
       { locale: r, format: n } = t,
       i = Z(t, ['locale', 'format'])
-    if (r == null) throw new Error('[svelte-i18n] A "locale" must be set to format numbers')
+    if (r == null)
+      throw new Error('[svelte-i18n] A "locale" must be set to format numbers')
     return (n && (i = ne('number', n)), new Intl.NumberFormat(r, i))
   }),
   Ui = ye((e) => {
     var t = e,
       { locale: r, format: n } = t,
       i = Z(t, ['locale', 'format'])
-    if (r == null) throw new Error('[svelte-i18n] A "locale" must be set to format dates')
+    if (r == null)
+      throw new Error('[svelte-i18n] A "locale" must be set to format dates')
     return (
-      n ? (i = ne('date', n)) : Object.keys(i).length === 0 && (i = ne('date', 'short')),
+      n
+        ? (i = ne('date', n))
+        : Object.keys(i).length === 0 && (i = ne('date', 'short')),
       new Intl.DateTimeFormat(r, i)
     )
   }),
@@ -3234,9 +3441,14 @@ const ne = (e, t) => {
     var t = e,
       { locale: r, format: n } = t,
       i = Z(t, ['locale', 'format'])
-    if (r == null) throw new Error('[svelte-i18n] A "locale" must be set to format time values')
+    if (r == null)
+      throw new Error(
+        '[svelte-i18n] A "locale" must be set to format time values'
+      )
     return (
-      n ? (i = ne('time', n)) : Object.keys(i).length === 0 && (i = ne('time', 'short')),
+      n
+        ? (i = ne('time', n))
+        : Object.keys(i).length === 0 && (i = ne('time', 'short')),
       new Intl.DateTimeFormat(r, i)
     )
   }),
@@ -3258,7 +3470,9 @@ const ne = (e, t) => {
       n = Z(t, ['locale'])
     return Gi(Qe({ locale: r }, n))
   },
-  ki = ye((e, t = U()) => new Jt(e, t, X().formats, { ignoreTag: X().ignoreTag })),
+  ki = ye(
+    (e, t = U()) => new Jt(e, t, X().formats, { ignoreTag: X().ignoreTag })
+  ),
   Xi = (e, t = {}) => {
     var r, n, i, a
     let s = t
@@ -3293,7 +3507,10 @@ const ne = (e, t) => {
       m = ki(u, c).format(o)
     } catch (h) {
       h instanceof Error &&
-        console.warn(`[svelte-i18n] Message "${e}" has syntax error:`, h.message)
+        console.warn(
+          `[svelte-i18n] Message "${e}" has syntax error:`,
+          h.message
+        )
     }
     return m
   },

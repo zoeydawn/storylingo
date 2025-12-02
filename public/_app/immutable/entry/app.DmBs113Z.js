@@ -116,7 +116,9 @@ class Et {
           return d(a.get(r) ?? i(r, Reflect.get(e, r)))
         },
         has(e, r) {
-          return r === Z ? !0 : (d(a.get(r) ?? i(r, Reflect.get(e, r))), Reflect.has(e, r))
+          return r === Z
+            ? !0
+            : (d(a.get(r) ?? i(r, Reflect.get(e, r))), Reflect.has(e, r))
         },
         set(e, r, o) {
           return (S(a.get(r) ?? i(r, o), o), Reflect.set(e, r, o))
@@ -215,14 +217,17 @@ const bt = 'modulepreload',
           )
             return new Promise((h, c) => {
               ;(l.addEventListener('load', h),
-                l.addEventListener('error', () => c(new Error(`Unable to preload CSS for ${u}`))))
+                l.addEventListener('error', () =>
+                  c(new Error(`Unable to preload CSS for ${u}`))
+                ))
             })
         })
       )
     }
     function e(r) {
       const o = new Event('vite:preloadError', { cancelable: !0 })
-      if (((o.payload = r), window.dispatchEvent(o), !o.defaultPrevented)) throw r
+      if (((o.payload = r), window.dispatchEvent(o), !o.defaultPrevented))
+        throw r
     }
     return n.then((r) => {
       for (const o of r || []) o.status === 'rejected' && e(o.reason)
@@ -241,7 +246,14 @@ function wt(s, t) {
     n = T(t, 'data_1', 3, null)
   ;(st(() => t.stores.page.set(t.page)),
     at(() => {
-      ;(t.stores, t.page, t.constructors, a(), t.form, i(), n(), t.stores.page.notify())
+      ;(t.stores,
+        t.page,
+        t.constructors,
+        a(),
+        t.form,
+        i(),
+        n(),
+        t.stores.page.notify())
     }))
   let e = x(!1),
     r = x(!1),
@@ -403,8 +415,12 @@ const pt = yt(wt),
     reroute: () => {},
     transport: {},
   },
-  Ot = Object.fromEntries(Object.entries(I.transport).map(([s, t]) => [s, t.decode])),
-  Bt = Object.fromEntries(Object.entries(I.transport).map(([s, t]) => [s, t.encode])),
+  Ot = Object.fromEntries(
+    Object.entries(I.transport).map(([s, t]) => [s, t.decode])
+  ),
+  Bt = Object.fromEntries(
+    Object.entries(I.transport).map(([s, t]) => [s, t.encode])
+  ),
   Dt = !1,
   It = (s, t) => Ot[s](t)
 export {

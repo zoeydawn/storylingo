@@ -1,4 +1,11 @@
-import { b as gt, c as W, a as k, f as G, s as C, e as E } from '../chunks/7vpOr-8R.js'
+import {
+  b as gt,
+  c as W,
+  a as k,
+  f as G,
+  s as C,
+  e as E,
+} from '../chunks/7vpOr-8R.js'
 import { i as tt } from '../chunks/CN82yqVR.js'
 import {
   X as pt,
@@ -27,9 +34,22 @@ import {
   R as B,
   af as St,
 } from '../chunks/ZIxVAD3j.js'
-import { s as It, r as Nt, p as st, b as K, a as et, i as D } from '../chunks/DpJNoy2a.js'
+import {
+  s as It,
+  r as Nt,
+  p as st,
+  b as K,
+  a as et,
+  i as D,
+} from '../chunks/DpJNoy2a.js'
 import { I as At, s as Ct, $ as at, e as nt } from '../chunks/DRn3GchK.js'
-import { l as Et, s as ot, a as Gt, c as it, e as Ft } from '../chunks/BD9XyX4O.js'
+import {
+  l as Et,
+  s as ot,
+  a as Gt,
+  c as it,
+  e as Ft,
+} from '../chunks/BD9XyX4O.js'
 import { b as Ot, r as Mt, g as Bt } from '../chunks/tKaaEpDf.js'
 const jt = () => performance.now(),
   A = {
@@ -112,7 +132,10 @@ function j(e, t, a, s) {
         ;(f || c?.abort(),
           V(t, 'introstart'),
           (c = Z(t, w(), _, 1, () => {
-            ;(V(t, 'introend'), c?.abort(), (c = m = void 0), (t.style.overflow = x))
+            ;(V(t, 'introend'),
+              c?.abort(),
+              (c = m = void 0),
+              (t.style.overflow = x))
           })))
       },
       out(T) {
@@ -134,7 +157,8 @@ function j(e, t, a, s) {
   if (((i.transitions ??= []).push(v), n && gt)) {
     var o = p
     if (!o) {
-      for (var u = i.parent; u && (u.f & _t) !== 0; ) for (; (u = u.parent) && (u.f & ht) === 0; );
+      for (var u = i.parent; u && (u.f & _t) !== 0; )
+        for (; (u = u.parent) && (u.f & ht) === 0; );
       o = !u || (u.f & bt) !== 0
     }
     o &&
@@ -186,7 +210,11 @@ function Z(e, t, a, s, n) {
       if (u > 0) {
         var S = !1
         if (m)
-          for (var h = Math.ceil(u / 16.666666666666668), b = 0; b <= h; b += 1) {
+          for (
+            var h = Math.ceil(u / 16.666666666666668), b = 0;
+            b <= h;
+            b += 1
+          ) {
             var y = i + o * x(b / h),
               I = lt(m(y, 1 - y))
             ;(T.push(I), (S ||= I.overflow === 'hidden'))
@@ -323,7 +351,9 @@ var Xt = G(
   Yt = G(
     '<div><div class="mb-6 flex items-center justify-between"><button type="button" class="btn preset-outlined">← Back</button> <h1 class="flex-1 text-center text-2xl font-bold"> </h1> <div class="w-16"></div></div> <div class="grid grid-cols-2 gap-4"></div></div>'
   ),
-  Zt = G('<div><button type="button" class="btn preset-outlined">← Back</button> <!></div>')
+  Zt = G(
+    '<div><button type="button" class="btn preset-outlined">← Back</button> <!></div>'
+  )
 function te(e, t) {
   J(t, !1)
   const a = () => K(Ft, '$displaySettings', n),

@@ -179,7 +179,11 @@ function _e(...n) {
   for (let t of n) {
     if (!t) continue
     for (let a in e) {
-      if (a.startsWith('on') && typeof e[a] == 'function' && typeof t[a] == 'function') {
+      if (
+        a.startsWith('on') &&
+        typeof e[a] == 'function' &&
+        typeof t[a] == 'function'
+      ) {
         e[a] = ge(t[a], e[a])
         continue
       }
@@ -224,7 +228,8 @@ function W(n) {
   for (let t in n) {
     const r = n[t]
     r != null &&
-      (t.startsWith('--') || (t = t.replace(/[A-Z]/g, (a) => `-${a.toLowerCase()}`)),
+      (t.startsWith('--') ||
+        (t = t.replace(/[A-Z]/g, (a) => `-${a.toLowerCase()}`)),
       (e += `${t}:${r};`))
   }
   return e
@@ -258,7 +263,9 @@ function j(...n) {
   const t = _e(...n)
   return (
     e.length > 0 && (t.class = e.length === 1 ? e[0] : e),
-    'style' in t && (typeof t.style == 'string' && (t.style = Le(t.style)), (t.style = W(t.style))),
+    'style' in t &&
+      (typeof t.style == 'string' && (t.style = Le(t.style)),
+      (t.style = W(t.style))),
     t
   )
 }
@@ -429,7 +436,9 @@ function Re(n, e) {
 }
 const x = Object.assign(Ee, { Toolbar: je, Lead: Ce, Headline: we, Trail: Re })
 var Ne = y('<option> </option>'),
-  ze = y('<div class="flex"><!> <select class="select ml-1 cursor-pointer"></select></div>')
+  ze = y(
+    '<div class="flex"><!> <select class="select ml-1 cursor-pointer"></select></div>'
+  )
 function Be(n, e) {
   P(e, !1)
   let t = Q('en')
@@ -460,7 +469,8 @@ function Be(n, e) {
         $(m)
         var s = {}
         ;(z(() => {
-          ;(D(o, r[l(g)]), s !== (s = l(g)) && (m.value = (m.__value = l(g)) ?? ''))
+          ;(D(o, r[l(g)]),
+            s !== (s = l(g)) && (m.value = (m.__value = l(g)) ?? ''))
         }),
           f(u, m))
       }
@@ -476,7 +486,9 @@ function Be(n, e) {
     f(n, v),
     L())
 }
-var Fe = y('<button type="button" class="btn-icon btn-icon-lg hover:preset-tonal"><!></button>'),
+var Fe = y(
+    '<button type="button" class="btn-icon btn-icon-lg hover:preset-tonal"><!></button>'
+  ),
   Oe = y('<p class="text-2xl">StoryLingo</p>'),
   Te = y('<!> <!> <!>', 1)
 function Ge(n) {

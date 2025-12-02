@@ -78,7 +78,9 @@ class he {
         const a = () => {
           if (Array.from(this.#r.values()).includes(i)) {
             var c = document.createDocumentFragment()
-            ;(K(f, c), c.append(R()), this.#e.set(i, { effect: f, fragment: c }))
+            ;(K(f, c),
+              c.append(R()),
+              this.#e.set(i, { effect: f, fragment: c }))
           } else S(f)
           this.#s.delete(i)
         }
@@ -89,7 +91,8 @@ class he {
   #i = (e) => {
     this.#r.delete(e)
     const t = Array.from(this.#r.values())
-    for (const [r, n] of this.#e) t.includes(r) || (S(n.effect), this.#e.delete(r))
+    for (const [r, n] of this.#e)
+      t.includes(r) || (S(n.effect), this.#e.delete(r))
   }
   ensure(e, t) {
     var r = A,
@@ -105,9 +108,12 @@ class he {
           T(() => t(this.anchor))
         )
     if ((this.#r.set(r, e), n)) {
-      for (const [a, u] of this.#s) a === e ? r.skipped_effects.delete(u) : r.skipped_effects.add(u)
+      for (const [a, u] of this.#s)
+        a === e ? r.skipped_effects.delete(u) : r.skipped_effects.add(u)
       for (const [a, u] of this.#e)
-        a === e ? r.skipped_effects.delete(u.effect) : r.skipped_effects.add(u.effect)
+        a === e
+          ? r.skipped_effects.delete(u.effect)
+          : r.skipped_effects.add(u.effect)
       ;(r.oncommit(this.#n), r.ondiscard(this.#i))
     } else (y && (this.anchor = C), this.#n())
   }
@@ -195,7 +201,8 @@ const be = {
     let t = s.props.length
     for (; t--; ) {
       let r = s.props[t]
-      if ((p(r) && (r = r()), typeof r == 'object' && r !== null && e in r)) return r[e]
+      if ((p(r) && (r = r()), typeof r == 'object' && r !== null && e in r))
+        return r[e]
     }
   },
   set(s, e, t) {
@@ -220,7 +227,8 @@ const be = {
   },
   has(s, e) {
     if (e === M || e === N) return !1
-    for (let t of s.props) if ((p(t) && (t = t()), t != null && e in t)) return !0
+    for (let t of s.props)
+      if ((p(t) && (t = t()), t != null && e in t)) return !0
     return !1
   },
   ownKeys(s) {
@@ -228,7 +236,8 @@ const be = {
     for (let t of s.props)
       if ((p(t) && (t = t()), !!t)) {
         for (const r in t) e.includes(r) || e.push(r)
-        for (const r of Object.getOwnPropertySymbols(t)) e.includes(r) || e.push(r)
+        for (const r of Object.getOwnPropertySymbols(t))
+          e.includes(r) || e.push(r)
       }
     return e
   },
@@ -269,7 +278,9 @@ function Ee(s, e, t, r) {
   if (d) {
     var B = s.$$legacy
     return function (o, v) {
-      return arguments.length > 0 ? ((!n || !v || B || E) && d(v ? l() : o), o) : l()
+      return arguments.length > 0
+        ? ((!n || !v || B || E) && d(v ? l() : o), o)
+        : l()
     }
   }
   var m = !1,

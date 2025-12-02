@@ -2,7 +2,13 @@
   import { resolve } from '$app/paths'
   import { XIcon } from '@lucide/svelte'
   import { Dialog, Portal } from '@skeletonlabs/skeleton-svelte'
-  import { BookIcon, MenuIcon, HouseIcon, SettingsIcon, UserIcon } from '@lucide/svelte'
+  import {
+    BookIcon,
+    MenuIcon,
+    HouseIcon,
+    SettingsIcon,
+    UserIcon,
+  } from '@lucide/svelte'
 
   let anchorSidebar = 'btn hover:preset-tonal justify-start px-2 w-full'
 
@@ -14,7 +20,9 @@
 </script>
 
 <Dialog>
-  <Dialog.Trigger class="btn-icon btn-icon-lg hover:preset-tonal"><MenuIcon /></Dialog.Trigger>
+  <Dialog.Trigger class="btn-icon btn-icon-lg hover:preset-tonal"
+    ><MenuIcon /></Dialog.Trigger
+  >
   <Portal>
     <Dialog.Backdrop
       class="bg-surface-50-950/50 fixed inset-0 z-50 transition transition-discrete {animBackdrop}"

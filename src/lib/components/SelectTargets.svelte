@@ -4,7 +4,11 @@
 
   import { _ } from 'svelte-i18n'
   import Login from '$lib/components/Login.svelte'
-  import { displaySettings, setTargetLevel, setTargetLanguage } from '$lib/stores'
+  import {
+    displaySettings,
+    setTargetLevel,
+    setTargetLanguage,
+  } from '$lib/stores'
   import { languages, levels, type Language, type LanguageLevel } from '$lib'
   // import { goto } from '$app/navigation';
   // import { resolve } from '$app/paths';
@@ -27,7 +31,12 @@
   function selectLevel(levelId: LanguageLevel) {
     setTargetLevel(levelId)
 
-    console.log('Selected language:', $displaySettings.language, 'Level:', $displaySettings.level)
+    console.log(
+      'Selected language:',
+      $displaySettings.language,
+      'Level:',
+      $displaySettings.level
+    )
 
     currentStep = 'none'
 
@@ -49,7 +58,10 @@
 </script>
 
 {#if currentStep === 'language'}
-  <div in:fade={{ duration: 300, easing: quintOut }} out:fade={{ duration: 300, easing: quintOut }}>
+  <div
+    in:fade={{ duration: 300, easing: quintOut }}
+    out:fade={{ duration: 300, easing: quintOut }}
+  >
     <h1 class="mb-6 text-center text-2xl font-bold">{$_('language.select')}</h1>
 
     <div class="grid grid-cols-2 gap-4">
@@ -65,9 +77,16 @@
     </div>
   </div>
 {:else if currentStep === 'level'}
-  <div in:fade={{ duration: 300, easing: quintOut }} out:fade={{ duration: 300, easing: quintOut }}>
+  <div
+    in:fade={{ duration: 300, easing: quintOut }}
+    out:fade={{ duration: 300, easing: quintOut }}
+  >
     <div class="mb-6 flex items-center justify-between">
-      <button type="button" class="btn preset-outlined" on:click={() => resetSelection('language')}>
+      <button
+        type="button"
+        class="btn preset-outlined"
+        on:click={() => resetSelection('language')}
+      >
         ← Back
       </button>
       <h1 class="flex-1 text-center text-2xl font-bold">
@@ -90,8 +109,15 @@
     </div>
   </div>
 {:else if currentStep === 'login'}
-  <div in:fade={{ duration: 300, easing: quintOut }} out:fade={{ duration: 300, easing: quintOut }}>
-    <button type="button" class="btn preset-outlined" on:click={() => resetSelection('level')}>
+  <div
+    in:fade={{ duration: 300, easing: quintOut }}
+    out:fade={{ duration: 300, easing: quintOut }}
+  >
+    <button
+      type="button"
+      class="btn preset-outlined"
+      on:click={() => resetSelection('level')}
+    >
       ← Back
     </button>
     <Login />

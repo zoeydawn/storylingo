@@ -10,7 +10,8 @@ export const POST: RequestHandler = async ({ request }) => {
       topic,
       language,
       level,
-    }: { topic: string; language: LanguageString; level: LanguageLevel } = await request.json()
+    }: { topic: string; language: LanguageString; level: LanguageLevel } =
+      await request.json()
 
     if (!topic || !language || !level) {
       throw error(400, 'Missing required parameters')

@@ -61,7 +61,8 @@ const b = 2,
   Un = Symbol(''),
   fe = new (class extends Error {
     name = 'StaleReactionError'
-    message = 'The reaction that called `getAbortSignal()` was re-run or destroyed'
+    message =
+      'The reaction that called `getAbortSignal()` was re-run or destroyed'
   })(),
   Vn = 1,
   Ke = 3,
@@ -185,7 +186,9 @@ function ht(e) {
   return e === this.v
 }
 function pt(e, t) {
-  return e != e ? t == t : e !== t || (e !== null && typeof e == 'object') || typeof e == 'function'
+  return e != e
+    ? t == t
+    : e !== t || (e !== null && typeof e == 'object') || typeof e == 'function'
 }
 function wt(e) {
   return !pt(e, this.v)
@@ -292,7 +295,9 @@ class U {
     for (const r of t) this.#l(r, n)
     ;(this.is_fork || this.#o(),
       this.#n > 0 || this.is_fork
-        ? (this.#e(n.effects), this.#e(n.render_effects), this.#e(n.block_effects))
+        ? (this.#e(n.effects),
+          this.#e(n.render_effects),
+          this.#e(n.block_effects))
         : ((Ce = this),
           (p = null),
           nt(n.render_effects),
@@ -334,7 +339,10 @@ class U {
       var f = r.parent
       for (r = r.next; r === null && f !== null; )
         (f === n.effect &&
-          (this.#e(n.effects), this.#e(n.render_effects), this.#e(n.block_effects), (n = n.parent)),
+          (this.#e(n.effects),
+          this.#e(n.render_effects),
+          this.#e(n.block_effects),
+          (n = n.parent)),
           (r = f.next),
           (f = f.parent))
     }
@@ -452,7 +460,8 @@ function qe(e) {
   try {
     var n
     for (e && (p !== null && Ye(), (n = e())); ; ) {
-      if ((_n(), N.length === 0 && (p?.flush(), N.length === 0))) return ((Pe = null), n)
+      if ((_n(), N.length === 0 && (p?.flush(), N.length === 0)))
+        return ((Pe = null), n)
       Ye()
     }
   } finally {
@@ -505,7 +514,8 @@ function nt(e) {
           if ((s.f & (X | P)) !== 0) continue
           const i = [s]
           let l = s.parent
-          for (; l !== null; ) (C.has(l) && (C.delete(l), i.push(l)), (l = l.parent))
+          for (; l !== null; )
+            (C.has(l) && (C.delete(l), i.push(l)), (l = l.parent))
           for (let o = i.length - 1; o >= 0; o--) {
             const a = i[o]
             ;(a.f & (X | P)) === 0 && pe(a)
@@ -523,7 +533,10 @@ function Et(e, t, n, r) {
       const i = s.f
       ;(i & b) !== 0
         ? Et(s, t, n, r)
-        : (i & (Ge | F)) !== 0 && (i & A) === 0 && mt(s, t, r) && (y(s, A), ee(s))
+        : (i & (Ge | F)) !== 0 &&
+          (i & A) === 0 &&
+          mt(s, t, r) &&
+          (y(s, A), ee(s))
     }
 }
 function gt(e, t) {
@@ -676,7 +689,11 @@ function wn(e, t) {
       var f = p
       if (l) {
         var u = !r.is_pending()
-        ;(r.update_pending_count(1), f.increment(u), o.get(f)?.reject(fe), o.delete(f), o.set(f, a))
+        ;(r.update_pending_count(1),
+          f.increment(u),
+          o.get(f)?.reject(fe),
+          o.delete(f),
+          o.set(f, a))
       }
       const _ = (c, d = void 0) => {
         if ((f.activate(), d)) d !== fe && ((i.f |= Y), Re(i, d))
@@ -763,7 +780,11 @@ function q(e, t) {
 }
 function Sr(e, t = !1, n = !0) {
   const r = We(e)
-  return (t || (r.equals = wt), Ie && n && T !== null && T.l !== null && (T.l.s ??= []).push(r), r)
+  return (
+    t || (r.equals = wt),
+    Ie && n && T !== null && T.l !== null && (T.l.s ??= []).push(r),
+    r
+  )
 }
 function K(e, t, n = !1) {
   v !== null &&
@@ -781,7 +802,8 @@ function Re(e, t) {
     ;(oe ? H.set(e, t) : H.set(e, n), (e.v = t))
     var r = U.ensure()
     ;(r.capture(e, n),
-      (e.f & b) !== 0 && ((e.f & A) !== 0 && Ze(e), y(e, (e.f & k) !== 0 ? g : j)),
+      (e.f & b) !== 0 &&
+        ((e.f & A) !== 0 && Ze(e), y(e, (e.f & k) !== 0 ? g : j)),
       (e.wv = qt()),
       xt(e, A),
       ye() &&
@@ -837,7 +859,10 @@ function ue(e) {
     r && n.set('length', q(e.length)),
     new Proxy(e, {
       defineProperty(o, a, f) {
-        ;(!('value' in f) || f.configurable === !1 || f.enumerable === !1 || f.writable === !1) &&
+        ;(!('value' in f) ||
+          f.configurable === !1 ||
+          f.enumerable === !1 ||
+          f.writable === !1) &&
           fn()
         var u = n.get(a)
         return (
@@ -916,10 +941,13 @@ function ue(e) {
         if (r && a === 'length')
           for (var d = f; d < _.v; d += 1) {
             var w = n.get(d + '')
-            w !== void 0 ? K(w, E) : d in o && ((w = l(() => q(E))), n.set(d + '', w))
+            w !== void 0
+              ? K(w, E)
+              : d in o && ((w = l(() => q(E))), n.set(d + '', w))
           }
         if (_ === void 0)
-          (!c || _e(o, a)?.writable) && ((_ = l(() => q(void 0))), K(_, ue(f)), n.set(a, _))
+          (!c || _e(o, a)?.writable) &&
+            ((_ = l(() => q(void 0))), K(_, ue(f)), n.set(a, _))
         else {
           c = _.v !== E
           var G = l(() => ue(f))
@@ -1041,7 +1069,8 @@ function mn() {
       'reset',
       (e) => {
         Promise.resolve().then(() => {
-          if (!e.defaultPrevented) for (const t of e.target.elements) t.__on_r?.()
+          if (!e.defaultPrevented)
+            for (const t of e.target.elements) t.__on_r?.()
         })
       },
       { capture: !0 }
@@ -1072,7 +1101,9 @@ function Nt(e) {
 }
 function Tn(e, t) {
   var n = t.last
-  n === null ? (t.last = t.first = e) : ((n.next = e), (e.prev = n), (t.last = e))
+  n === null
+    ? (t.last = t.first = e)
+    : ((n.next = e), (e.prev = n), (t.last = e))
 }
 function D(e, t, n, r = !0) {
   var s = h
@@ -1111,9 +1142,12 @@ function D(e, t, n, r = !0) {
         l.nodes_start === null &&
         l.first === l.last &&
         (l.f & we) === 0 &&
-        ((l = l.first), (e & F) !== 0 && (e & ge) !== 0 && l !== null && (l.f |= ge)),
+        ((l = l.first),
+        (e & F) !== 0 && (e & ge) !== 0 && l !== null && (l.f |= ge)),
       l !== null &&
-        ((l.parent = s), s !== null && Tn(l, s), v !== null && (v.f & b) !== 0 && (e & ne) === 0))
+        ((l.parent = s),
+        s !== null && Tn(l, s),
+        v !== null && (v.f & b) !== 0 && (e & ne) === 0))
     ) {
       var o = v
       ;(o.effects ??= []).push(l)
@@ -1244,7 +1278,8 @@ function Ct(e) {
     r = e.next
   ;(n !== null && (n.next = r),
     r !== null && (r.prev = n),
-    t !== null && (t.first === e && (t.first = r), t.last === e && (t.last = n)))
+    t !== null &&
+      (t.first === e && (t.first = r), t.last === e && (t.last = n)))
 }
 function On(e, t, n = !0) {
   var r = []
@@ -1282,7 +1317,8 @@ function Ft(e, t) {
         s = (n.f & ge) !== 0 || (n.f & L) !== 0
       ;(Ft(n, s ? t : !1), (n = r))
     }
-    if (e.transitions !== null) for (const i of e.transitions) (i.is_global || t) && i.in()
+    if (e.transitions !== null)
+      for (const i of e.transitions) (i.is_global || t) && i.in()
   }
 }
 function Vr(e, t) {
@@ -1359,7 +1395,9 @@ function Yt(e, t, n = !0) {
   if (r !== null && !M?.includes(e))
     for (var s = 0; s < r.length; s++) {
       var i = r[s]
-      ;(i.f & b) !== 0 ? Yt(i, t, !1) : t === i && (n ? y(i, A) : (i.f & g) !== 0 && y(i, j), ee(i))
+      ;(i.f & b) !== 0
+        ? Yt(i, t, !1)
+        : t === i && (n ? y(i, A) : (i.f & g) !== 0 && y(i, j), ee(i))
     }
 }
 function Ht(e) {
@@ -1401,14 +1439,24 @@ function Ht(e) {
     if (ye() && O !== null && !I && c !== null && (e.f & (b | j | A)) === 0)
       for (d = 0; d < O.length; d++) Yt(O[d], e)
     return (
-      s !== null && s !== e && (he++, O !== null && (r === null ? (r = O) : r.push(...O))),
+      s !== null &&
+        s !== e &&
+        (he++, O !== null && (r === null ? (r = O) : r.push(...O))),
       (e.f & Y) !== 0 && (e.f ^= Y),
       _
     )
   } catch (w) {
     return vn(w)
   } finally {
-    ;((e.f ^= Le), (m = t), (S = n), (O = r), (v = s), (M = i), me(l), (I = o), (J = a))
+    ;((e.f ^= Le),
+      (m = t),
+      (S = n),
+      (O = r),
+      (v = s),
+      (M = i),
+      me(l),
+      (I = o),
+      (J = a))
   }
 }
 function Pn(e, t) {
@@ -1479,7 +1527,11 @@ function ce(e) {
     if (n) {
       var l = e,
         o = l.v
-      return ((((l.f & g) === 0 && l.reactions !== null) || Bt(l)) && (o = Ze(l)), H.set(l, o), o)
+      return (
+        (((l.f & g) === 0 && l.reactions !== null) || Bt(l)) && (o = Ze(l)),
+        H.set(l, o),
+        o
+      )
     }
   } else if (n) {
     if (((l = e), R?.has(l))) return R.get(l)
@@ -1492,7 +1544,8 @@ function Ut(e) {
   if (e.deps !== null) {
     e.f ^= k
     for (const t of e.deps)
-      ((t.reactions ??= []).push(e), (t.f & b) !== 0 && (t.f & k) === 0 && Ut(t))
+      ((t.reactions ??= []).push(e),
+        (t.f & b) !== 0 && (t.f & k) === 0 && Ut(t))
   }
 }
 function Bt(e) {
@@ -1531,7 +1584,12 @@ function Xr(e) {
   }
 }
 function Ue(e, t = new Set()) {
-  if (typeof e == 'object' && e !== null && !(e instanceof EventTarget) && !t.has(e)) {
+  if (
+    typeof e == 'object' &&
+    e !== null &&
+    !(e instanceof EventTarget) &&
+    !t.has(e)
+  ) {
     ;(t.add(e), e instanceof Date && e.getTime())
     for (let r in e)
       try {
@@ -1597,7 +1655,8 @@ function Mn(e, t = ie) {
 function Zr(e, t, n) {
   const r = !Array.isArray(e),
     s = r ? [e] : e
-  if (!s.every(Boolean)) throw new Error('derived() expects stores as input, got a falsy value')
+  if (!s.every(Boolean))
+    throw new Error('derived() expects stores as input, got a falsy value')
   const i = t.length < 2
   return Cn(n, (l, o) => {
     let a = !1
