@@ -38,14 +38,26 @@
         </header>
 
         <ul class="space-y-2">
-          {#each menueLinks as link (link)}
-            {@const Icon = link.icon}
-            <li>
-              <a href={resolve(link.href)} class={anchorSidebar}
-                ><Icon class="size-4" />{link.label}</a
-              >
-            </li>
-          {/each}
+          <li>
+            <a href="/" class={anchorSidebar}>
+              <HouseIcon class="size-4" />Home
+            </a>
+          </li>
+          <li>
+            <a href="/story" class={anchorSidebar}>
+              <BookIcon class="size-4" />Micro-stories
+            </a>
+          </li>
+          <li>
+            <a href="/account" class={anchorSidebar}>
+              <UserIcon class="size-4" />Account
+            </a>
+          </li>
+          <li>
+            <a href="/settings" class={anchorSidebar}>
+              <SettingsIcon class="size-4" />Settings
+            </a>
+          </li>
         </ul>
       </Dialog.Content>
     </Dialog.Positioner>
