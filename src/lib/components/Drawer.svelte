@@ -10,6 +10,11 @@
     UserIcon,
   } from '@lucide/svelte'
 
+  let isOpen = false
+
+  const close = () => (isOpen = false)
+  const open = () => (isOpen = true)
+
   let anchorSidebar = 'btn hover:preset-tonal justify-start px-2 w-full'
 
   // Animations:
@@ -19,10 +24,16 @@
     'transition transition-discrete opacity-0 -translate-x-full starting:data-[state=open]:opacity-0 starting:data-[state=open]:-translate-x-full data-[state=open]:opacity-100 data-[state=open]:translate-x-0'
 </script>
 
-<Dialog>
-  <Dialog.Trigger class="btn-icon btn-icon-lg hover:preset-tonal"
-    ><MenuIcon /></Dialog.Trigger
+<Dialog open={isOpen} onInteractOutside={close} onEscapeKeyDown={close}>
+  <button
+    type="button"
+    on:click={open}
+    class="btn-icon btn-icon-lg hover:preset-tonal"
+    title="Go"
+    aria-label="Go"
   >
+    <MenuIcon />
+  </button>
   <Portal>
     <Dialog.Backdrop
       class="bg-surface-50-950/50 fixed inset-0 z-50 transition transition-discrete {animBackdrop}"
@@ -33,29 +44,29 @@
       >
         <header class="flex items-center justify-between">
           <Dialog.Title class="text-2xl font-bold">StoryLingo</Dialog.Title>
-          <Dialog.CloseTrigger class="btn-icon preset-tonal">
+          <button on:click={close} class="btn-icon preset-tonal">
             <XIcon />
-          </Dialog.CloseTrigger>
+          </button>
         </header>
 
         <ul class="space-y-2">
           <li>
-            <a href={resolve('/')} class={anchorSidebar}>
+            <a href={resolve('/')} class={anchorSidebar} on:click={close}>
               <HouseIcon class="size-4" />Home
             </a>
           </li>
           <li>
-            <a href={resolve('/story')} class={anchorSidebar}>
+            <a href={resolve('/story')} class={anchorSidebar} on:click={close}>
               <BookIcon class="size-4" />Micro-stories
             </a>
           </li>
           <li>
-            <a href={resolve('/')} class={anchorSidebar}>
+            <a href={resolve('/')} class={anchorSidebar} on:click={close}>
               <UserIcon class="size-4" />Account
             </a>
           </li>
           <li>
-            <a href={resolve('/')} class={anchorSidebar}>
+            <a href={resolve('/')} class={anchorSidebar} on:click={close}>
               <SettingsIcon class="size-4" />Settings
             </a>
           </li>
